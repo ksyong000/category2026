@@ -1,4 +1,4 @@
 [[redirects]]
-from = "/*"
+from = "/html/"
 to = "categorySub.html"
 status = 200
