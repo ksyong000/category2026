@@ -4539,6 +4539,16 @@ body {
   .filter-content
   .filter-item-content
   .ps--opt-wrap
+  .opt-list.size
+  li.selected {
+  background: var(--color-90);
+  color: #fff;
+}
+.ps-new
+  .ps-goods-filter-area
+  .filter-content
+  .filter-item-content
+  .ps--opt-wrap
   .opt-list.colors {
   grid-template-columns: repeat(2, 1fr);
   left: 0;
