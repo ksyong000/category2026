@@ -4542,6 +4542,15 @@ body {
   .opt-list.size
   li.selected {
   background: var(--color-90);
+}
+.ps-new
+  .ps-goods-filter-area
+  .filter-content
+  .filter-item-content
+  .ps--opt-wrap
+  .opt-list.size
+  li.selected
+  a {
   color: #fff;
 }
 .ps-new
