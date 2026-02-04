@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+
+	<!--css-->
+	<link rel="stylesheet" type="text/css"
+		href="https://image.prospecs.com/mobile/ux/css/renewal/fonts.css?20260204102">
+	<link rel="stylesheet" type="text/css"
+		href="https://image.prospecs.com/mobile/ux/css/renewal/reset.css?20260204102">
+	<link rel="stylesheet" type="text/css"
+		href="https://image.prospecs.com/mobile/ux/css/renewal/jquery-ui.min.css?20260204102">
+	<link rel="stylesheet" type="text/css"
+		href="https://image.prospecs.com/mobile/ux/css/renewal/style.css?20260204102">
+	<link rel="stylesheet" type="text/css"
+		href="https://image.prospecs.com/mobile/ux/css/renewal/custom.css?20260204102">
+	<link rel="stylesheet" type="text/css"
+		href="https://image.prospecs.com/mobile/ux/css/renewal/belt_mob.css?20260204102">
+	<link rel="stylesheet" type="text/css" href="https://image.prospecs.com/mobile/ux/css/renewal/mo.css?20260204102">
+	<link rel="stylesheet" href="https://image.prospecs.com/files/swiper/package_12.0.3/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="ps-new.css">
+
+	<!--js-->
+	<script type="text/javascript" src="https://image.prospecs.com/mobile/ux/js/lib/jquery.lib.js"></script>
+	<script type="text/javascript" src="https://image.prospecs.com/mobile/ux/js/lib/jquery.history.min.js"></script>
+	<script type="text/javascript" src="https://image.prospecs.com/mobile/ux/js/renewal/libs/aos.js"></script>
+	<script type="text/javascript" src="https://image.prospecs.com/mobile/ux/js/renewal/common.js?20260204102"></script>
+	<script type="text/javascript" src="ps_script_mo.js"></script>
+	<script src="https://image.prospecs.com/files/swiper/package_12.0.3/swiper-bundle.min.js"></script>
+</head>
+
+<body class="topSlideY">
+	<div id="psWrap" class="ps-wrap ps-new sub">
+		<!-- header -->
+		<header class="fixed">
+			<div class="swiper top-txt-banner swiper-initialized swiper-vertical swiper-backface-hidden">
+				<div class="swiper-wrapper" id="swiper-wrapper-d9fe141024d8bf4f2" aria-live="off"
+					style="transition-duration: 0ms; transform: translate3d(0px, -32px, 0px); transition-delay: 0ms;">
+					<div class="swiper-slide swiper-slide-next swiper-slide-prev"
+						style="display: flex; align-items: center; justify-content: center; background: rgb(0, 0, 0); color: rgb(255, 255, 255); height: 32px;"
+						role="group" aria-label="2 / 2" data-swiper-slide-index="1">
+						<p>
+							<a href="http://pf.kakao.com/_Nxnhxbd">카카오톡 채널 친구 추가 시 5,000원 쿠폰 증정</a>
+						</p>
+						<button class="close-btn" onclick="jfTopBBClose();"></button>
+					</div>
+					<div class="swiper-slide swiper-slide-active"
+						style="display: flex; align-items: center; justify-content: center; background: rgb(0, 0, 0); color: rgb(255, 255, 255); height: 32px;"
+						role="group" aria-label="1 / 2" data-swiper-slide-index="0">
+						<p>
+							<a href="/display.do?cmd=appDown">APP 다운로드 시 3,000포인트 증정</a>
+						</p>
+						<button class="close-btn" onclick="jfTopBBClose();"></button>
+					</div>
+				</div>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+			</div>
+
+			<div class="gnb-area">
+				<div class="logo">
+					<a href="/">
+						<div class="logo-img"></div>
+					</a>
+				</div>
+				<ul class="right-menus">
+					<li>
+						<button class="search-btn" data-open-layer="commonSearch" id="search"
+							onclick="jfGnbSearch();"></button>
+					</li>
+					<li class="has-cart hide-indicator">
+						<button onclick="cfGoToPage(_PAGE_CART_LIST);">CART</button>
+					</li>
+					<li>
+						<button class="menu-btn" id="sideMenuClose">MENU</button>
+					</li>
+				</ul>
+				<input type="hidden" id="cart-cnt" value="0">
+			</div>
+			<aside>
+
+				<div class="logout-area">
+					<p class="top-message">
+						<a class="login-page-btn underline" href="javascript:void('0');"
+							onclick="cfGoToPage(_PAGE_LOGIN); return false;">로그인</a>하시고,<br>다양한 혜택을 만나보세요!
+					</p>
+					<div class="btn-wrap2">
+						<button class="membership-btn popup-btn" data-popup="membership-logout">멤버십카드</button>
+						<button class="mypage-btn"
+							onclick="cfGoToPage(_PAGE_MEMBER_SIGNUP); return false;">회원가입</button>
+					</div>
+				</div>
+
+				<ul class="category-menus">
+
+					<li class="toggle">
+						<a href="javascript:void('0');" onclick="">
+							RUNNING
+						</a>
+						<ul class="sub-menus">
+
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(1100,2,'','',''); return false;"
+									rel="nosublink">신발</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(1200,2,'','',''); return false;"
+									rel="nosublink">의류</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
+									rel="nosublink">액세서리</a></li>
+						</ul>
+					</li>
+
+					<li class="toggle">
+						<a href="javascript:void('0');" onclick="">
+							SPORTS STYLE
+						</a>
+						<ul class="sub-menus">
+
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(2100,2,'','',''); return false;"
+									rel="nosublink">신발</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(2200,2,'','',''); return false;"
+									rel="nosublink">의류</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(2300,2,'','',''); return false;"
+									rel="nosublink">액세서리</a></li>
+						</ul>
+					</li>
+
+					<li class="toggle">
+						<a href="javascript:void('0');" onclick="">
+							HERITAGE
+						</a>
+						<ul class="sub-menus">
+
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(3100,2,'','',''); return false;"
+									rel="nosublink">마라톤 110 파리</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(3200,2,'','',''); return false;"
+									rel="nosublink">마라톤 110</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(3300,2,'','',''); return false;"
+									rel="nosublink">마라톤 220</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(3400,2,'','',''); return false;"
+									rel="nosublink">그랜드 슬램 82</a></li>
+						</ul>
+					</li>
+
+					<li class="toggle">
+						<a href="javascript:void('0');" onclick="">
+							SPORTS
+						</a>
+						<ul class="sub-menus">
+
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(5100,2,'','',''); return false;"
+									rel="nosublink">야구</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(5200,2,'','',''); return false;"
+									rel="nosublink">축구</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(5300,2,'','',''); return false;"
+									rel="nosublink">농구</a></li>
+
+							<li><a href="javascript:;" onclick="cfCategoryItmKinds(5400,2,'','',''); return false;"
+									rel="nosublink">기타</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="javascript:void('0');" onclick="cfGoToPage(_PAGE_SMART_FIT); return false;">
+							ONE SPEC
+						</a>
+
+
+
+					</li>
+
+					<li class="toggle">
+						<a href="javascript:void('0');" onclick="">
+							OUR STORY
+						</a>
+						<ul class="sub-menus">
+
+
+							<li><a href="javascript:;"
+									onclick="cfGoToPage('/product.do?cmd=getSponsorship',''); return false;"
+									rel="nosublink">공식 후원</a></li>
+
+							<li><a href="javascript:;"
+									onclick="cfGoToPage('/display.do?cmd=getAboutProspecs&amp;contents=First',''); return false;"
+									rel="nosublink">브랜드 선언</a></li>
+
+							<li><a href="javascript:;"
+									onclick="cfGoToPage('/display.do?cmd=getAboutProspecs&amp;contents=Second',''); return false;"
+									rel="nosublink">시즌 컬렉션</a></li>
+
+							<li><a href="javascript:;"
+									onclick="cfGoToPage('/display.do?cmd=getAboutProspecs&amp;contents=Third',''); return false;"
+									rel="nosublink">브랜드 가이드</a></li>
+
+							<li><a href="javascript:;"
+									onclick="cfGoToPage('/planning.do?cmd=planningMain&amp;ITHR_CD=PM_001',''); return false;"
+									rel="nosublink">이벤트</a></li>
+						</ul>
+					</li>
+
+				</ul>
+				<ul class="bot-links">
+					<li><a href="javascript:;" class="font-kor"
+							onclick="cfGoToPage(_PAGE_NOTICE); return false;">공지사항</a></li>
+					<li><a href="javascript:;" class="font-kor"
+							onclick="cfGoToPage(_PAGE_STORE_INFO); return false;">매장안내</a></li>
+				</ul>
+			</aside>
+			<!-- 멤버쉽카드 -->
+			<div class="popup-dim">
+				<div class="popup bot-sheet-popup" id="membership-login-popup">
+					<button class="popup-close-btn"></button>
+					<p class="title">
+						<span class="font-bold" id="membershipNm"></span>님<br>
+					</p>
+					<p class="point-txt">
+						<span class="font-bold" id="membershipLpoint"></span> P
+					</p>
+					<div class="barcode-area">
+						<div class="barcode-img"
+							style="width:100%;max-width: 400px;height:150px;background-color: lightgray;">
+							<canvas id="barcode" style="width:100%;height: 100%"></canvas>
+						</div>
+						<p class="barcode-txt" id="membershipNo"></p>
+					</div>
+				</div>
+				<div class="popup bot-sheet-popup" id="membership-logout-popup">
+					<button class="popup-close-btn"></button>
+					<p class="title">로그인이 필요한 서비스입니다.</p>
+					<p class="subtitle">멤버십 카드를 확인하시려면 로그인해주세요.</p>
+					<div class="btn-wrap">
+						<button onclick="cfGoToPage(_PAGE_LOGIN); return false;">로그인</button>
+					</div>
+				</div>
+			</div>
+			<!-- 검색 -->
+			<form name="gnbSearchForm" method="post" action="/display.do"
+				onsubmit="return jfSearchProductByGnb(document.gnbSearchForm.qt.value);">
+				<div class="ps-layer-full search" data-layer-target="commonSearch">
+					<div class="ps-layer-full--content">
+						<!-- 검색팝업 변경 20240724 -->
+						<div class="ps-common-search ps-search-wrap">
+							<i class="icon search-gray"></i>
+							<div class="ps-input">
+								<input id="qt" name="qt" class="inp search-input" type="text" value=""
+									placeholder="검색어를 입력해주세요." onfocus="this.setAttribute('data-focus','focus');"
+									data-focus="focus" onkeypress="if(window.event.keyCode==13){jfSearchEvent();}">
+								<input type="hidden" name="cmd" value="getProductSearch">
+								<input type="hidden" name="from" value="gnb">
+								<input type="hidden" id="adUrl" value="">
+								<button type="reset" value="reset"
+									class="ps-btn icon close search-clear">검색어초기화</button>
+							</div>
+							<button type="button" class="ps-btn search-btn"
+								data-close-layer="commonSearch"><span>취소</span></button>
+							<script>
+								$('.search-input').on('input', function () {
+									if ($(this).val().trim().length > 0) {
+										$('.search-clear').fadeIn(100);
+									} else {
+										$('.search-clear').hide();
+									}
+								});
+								$('.search-clear').click(function () {
+									$(this).hide();
+								});
+							</script>
+						</div>
+						<!--// 검색팝업 변경 20240724 -->
+						<div class="ps-common-recommend">
+							<dl class="ps-common-recommend--list">
+								<dt>추천 검색어</dt><!-- 클래스삭제 20240724-->
+								<dd>
+									<ul id="search-recommend-ul" class="ps-search-recommend flex-auto"></ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- 검색 -->
+			<!--// GNB -->
+		</header>
+		<script type="text/javascript">
+			//gnb레이아웃
+			function initLayout() {
+				let header = document.querySelector('header');
+				let headerTopTxtBanner = header.querySelector('.top-txt-banner');
+
+				if (headerTopTxtBanner) {
+					headerTopTxtBanner.querySelector('.close-btn').addEventListener('click', function () {
+						document.querySelector('.top-txt-banner').classList.toggle('hide');
+					})
+				}
+
+				// 스크롤시 헤더 숨기기
+				// 헤더가 스크롤한 만큼 따라 이동하도록 구현
+				let lastScrollY = window.scrollY;
+				let headerOffset = 0;
+				let ticking = false;
+
+				function onScroll() {
+					if (!ticking) {
+						window.requestAnimationFrame(() => {
+							const currentScrollY = window.scrollY;
+							const headerHeight = header.offsetHeight;
+
+							if (currentScrollY > lastScrollY) {
+								headerOffset = Math.min(headerOffset + (currentScrollY - lastScrollY), headerHeight);
+							} else if (currentScrollY < lastScrollY) {
+								let targetMinOffset = 0;
+								if (headerTopTxtBanner && currentScrollY > headerTopTxtBanner.offsetHeight) {
+									targetMinOffset = headerTopTxtBanner.offsetHeight;
+								}
+								headerOffset = Math.max(headerOffset - (lastScrollY - currentScrollY), targetMinOffset);
+							}
+
+							if (currentScrollY <= 0) {
+								headerOffset = 0;
+							}
+
+							header.style.top = '-' + headerOffset + 'px';
+
+							lastScrollY = currentScrollY;
+							ticking = false;
+						});
+						ticking = true;
+					}
+				}
+
+				window.addEventListener('scroll', onScroll);
+
+				document.querySelector('header .menu-btn').addEventListener('click', function () {
+					$('#sideMenuClose').text($('#sideMenuClose').text() == "MENU" ? "CLOSE" : "MENU");
+					document.querySelector('body').classList.toggle('show-aside');
+				})
+
+				document.querySelectorAll('aside .category-menus li').forEach(el => {
+					const subMenus = el.querySelector('.sub-menus');
+					if (subMenus) {
+						el.classList.add('toggle');
+
+						el.children[0].addEventListener('click', function () {
+							el.classList.toggle('toggle-open');
+
+						});
+					}
+				})
+			}
+
+			$(function () {
+				initLayout();
+			});
+		</script>
+		<!--//header -->
+		<!--contents[s]-->
+		<main id="container" class="">
+			<!--depth[s]-->
+			<div class="ps-sub-gnbWrap">
+				<!--1depth[s]-->
+				<ul class="ps-breadcrumb flex items-center autoScrollList">
+					<li class="on"><a href="javascript:void(0);"
+							onclick="cfCategoryItmKinds(1100,2,'','',''); return false;">신발전체</a></li>
+					<li class="" id="mdGnb_1"><a href="javascript:jfSearchLnbList(1101,22,1,'러닝화','');">러닝화</a></li>
+					<li class="" id="mdGnb_2"><a href="javascript:jfSearchLnbList(1102,22,2,'워킹화','');">워킹화</a>
+					</li>
+					<li class="" id="mdGnb_3"><a href="javascript:jfSearchLnbList(1103,22,3,'트레킹화','');">트레킹화</a></li>
+					<li class="" id="mdGnb_4"><a href="javascript:jfSearchLnbList(1104,22,4,'쿠션화','');">쿠션화</a></li>
+					<li class="" id="mdGnb_5"><a href="javascript:jfSearchLnbList(1105,22,5,'트레일러닝화','');">트레일러닝화</a>
+					</li>
+				</ul>
+				<!--//1depth[e]-->
+				<!--2depth[s]-->
+				<ul class="ps-sub-gnbList autoScrollList">
+					<li class="on"><a href="javascript:void(0);">전체</a></li>
+					<li><a href="javascript:void(0);">레이싱화</a></li>
+					<li><a href="javascript:void(0);">안정화</a></li>
+					<li><a href="javascript:void(0);">쿠션화</a></li>
+					<li><a href="javascript:void(0);">트레일러닝화</a></li>
+					<li><a href="javascript:void(0);">그냥운동화</a></li>
+				</ul>
+				<!--//2depth[e]-->
+				<!--상품수량 & SORTING[s]-->
+				<div class="ps-sub-goodsInfo px-gutter flex">
+					<p class="ps-sub-goodsInfo--count"><span>166</span>ITEMS</p>
+					<!--sort 선택후 적용값 있을경우 ps-sub-goodsInfo--sorting-btn.on 클래스 추가-->
+					<button class="ps-sub-goodsInfo--sorting-btn" data-open-layer="b-layer1">
+						<span>정렬</span>
+					</button>
+				</div>
+
+				<!--//상품수량 & SORTING[e]-->
+			</div>
+			<script>
+				// autoScrollList
+				document.addEventListener('DOMContentLoaded', function () {
+					// autoScrollList 클래스를 가진 ul을 모두 선택
+					var autoScrollUls = document.querySelectorAll('.autoScrollList');
+					autoScrollUls.forEach(function (ul) {
+						ul.addEventListener('click', function (e) {
+							var li = e.target.closest('li');
+							if (!li || !ul.contains(li)) return;
+
+							//클릭된 li에 on클래스, 나머지는 제거
+							ul.querySelectorAll('li').forEach(function (l) {
+								l.classList.toggle('on', l === li);
+							});
+
+							//클릭된 li를 가운데로 이동(스크롤)
+							var ulRect = ul.getBoundingClientRect();
+							var liRect = li.getBoundingClientRect();
+
+							// 현재 스크롤 값
+							var scrollLeft = ul.scrollLeft;
+							// li의 가운데 좌표가 ul 가운데에 오도록 계산
+							var liCenter = li.offsetLeft + li.offsetWidth / 2;
+							var ulCenter = ul.clientWidth / 2;
+							ul.scrollTo({
+								left: liCenter - ulCenter,
+								behavior: 'smooth'
+							});
+						});
+					});
+				});
+			</script>
+			<!--//depth[e]-->
+			<!--상품리스트[s]-->
+			<form name="productForm" id="productForm" method="post">
+				<section class="">
+					<div data-aos="ps-fade-in" data-aos-once="true"
+						class="ps-prd-list--wrap flex flex-wrap -mx-1 overflow-hidden sm:-mx-1 lg:-mx-4 px-gutter aos-init aos-animate w-full"
+						id="listBox">
+						<div
+							class="ps-col px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/3 lg:my-4 lg:px-4 lg:w-1/4">
+							<a href="javascript:void(0);" class="ps-prd-item"
+								onclick="ngjfInifiniteScroll.pushLinkHistory(0,0,this); jfCtPrdChg(0,this,3); return false;"
+								data-goodsnum="0">
+								<div class="thumbs ratio1"> <img id="prodImg_0"
+										src="https://img.prospecs.com/prod/PR0UR25/PR0UR25F301/PR0UR25F301_01.jpg/dims/resizef/530x530/optimize"
+										onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/530x530/optimize'"
+										alt="PR0UR25F301">
+								</div>
+								<div class="desc">
+									<p class="name line-clamp-2">듀플렉스 GF</p>
+									<div class="price">
+										<input type="hidden" id="pri_0" value="159000">
+										<p class="amount"> <span class="per">20%</span>
+											175,200원
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div
+							class="ps-col px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/3 lg:my-4 lg:px-4 lg:w-1/4">
+							<a href="javascript:void(0);" class="ps-prd-item"
+								onclick="ngjfInifiniteScroll.pushLinkHistory(0,1,this); jfCtPrdChg(1,this,3); return false;"
+								data-goodsnum="1">
+								<div class="thumbs ratio1"> <img id="prodImg_1"
+										src="https://img.prospecs.com/prod/PR0UR25/PR0UR25F302/PR0UR25F302_01.jpg/dims/resizef/530x530/optimize"
+										onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/530x530/optimize'"
+										alt="PR0UR25F302">
+								</div>
+								<div class="desc">
+									<p class="name line-clamp-2">듀플렉스 GF</p>
+									<div class="price">
+										<input type="hidden" id="pri_0" value="159000">
+										<p class="amount"> <span class="per">20%</span>
+											175,200원
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div
+							class="ps-col px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/3 lg:my-4 lg:px-4 lg:w-1/4">
+							<a href="javascript:void(0);" class="ps-prd-item"
+								onclick="ngjfInifiniteScroll.pushLinkHistory(0,2,this); jfCtPrdChg(2,this,3); return false;"
+								data-goodsnum="2">
+								<div class="thumbs ratio1"> <img id="prodImg_2"
+										src="https://img.prospecs.com/prod/PR0UR25/PR0UR25F303/PR0UR25F303_01.jpg/dims/resizef/530x530/optimize"
+										onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/530x530/optimize'"
+										alt="PR0UR25F303">
+								</div>
+								<div class="desc">
+									<p class="name line-clamp-2">듀플렉스 GF</p>
+									<div class="price">
+										<input type="hidden" id="pri_2" value="159000">
+										<p class="amount">159,000원</p>
+									</div>
+									<div class="badge">
+										<span class="sex">
+											<span class="male">남</span>
+											<span class="female">여</span>
+										</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div
+							class="ps-col px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/3 lg:my-4 lg:px-4 lg:w-1/4">
+							<a href="javascript:void(0);" class="ps-prd-item"
+								onclick="ngjfInifiniteScroll.pushLinkHistory(0,3,this); jfCtPrdChg(3,this,3); return false;"
+								data-goodsnum="3">
+								<div class="thumbs ratio1"> <img id="prodImg_3"
+										src="https://img.prospecs.com/prod/PR0UR25/PR0UR25F311/PR0UR25F311_01.jpg/dims/resizef/530x530/optimize"
+										onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/530x530/optimize'"
+										alt="PR0UR25F311">
+								</div>
+								<div class="desc">
+									<p class="name line-clamp-2">듀플렉스 GD</p>
+									<div class="price">
+										<input type="hidden" id="pri_3" value="139000">
+										<p class="amount">139,000원</p>
+									</div>
+									<div class="badge">
+										<span class="sex">
+											<span class="male">남</span>
+											<span class="female">여</span>
+										</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div
+							class="ps-col px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/3 lg:my-4 lg:px-4 lg:w-1/4">
+							<a href="javascript:void(0);" class="ps-prd-item"
+								onclick="ngjfInifiniteScroll.pushLinkHistory(0,4,this); jfCtPrdChg(4,this,3); return false;"
+								data-goodsnum="4">
+								<div class="thumbs ratio1"> <img id="prodImg_4"
+										src="https://img.prospecs.com/prod/PR0UR25/PR0UR25F312/PR0UR25F312_01.jpg/dims/resizef/530x530/optimize"
+										onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/530x530/optimize'"
+										alt="PR0UR25F312">
+								</div>
+								<div class="desc">
+									<p class="name line-clamp-2">듀플렉스 GD</p>
+									<div class="price">
+										<input type="hidden" id="pri_4" value="139000">
+										<p class="amount">139,000원</p>
+									</div>
+									<div class="badge">
+										<span class="sex">
+											<span class="male">남</span>
+											<span class="female">여</span>
+										</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div
+							class="ps-col px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/3 lg:my-4 lg:px-4 lg:w-1/4">
+							<a href="javascript:void(0);" class="ps-prd-item"
+								onclick="ngjfInifiniteScroll.pushLinkHistory(0,5,this); jfCtPrdChg(5,this,3); return false;"
+								data-goodsnum="5">
+								<div class="thumbs ratio1"> <img id="prodImg_5"
+										src="https://img.prospecs.com/prod/PR0UR25/PR0UR25F313/PR0UR25F313_01.jpg/dims/resizef/530x530/optimize"
+										onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/530x530/optimize'"
+										alt="PR0UR25F313">
+								</div>
+								<div class="desc">
+									<p class="name line-clamp-2">듀플렉스 GD</p>
+									<div class="price">
+										<input type="hidden" id="pri_5" value="139000">
+										<p class="amount">139,000원</p>
+									</div>
+									<div class="badge">
+										<span class="sex">
+											<span class="male">남</span>
+											<span class="female">여</span>
+										</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div
+							class="ps-col px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/3 lg:my-4 lg:px-4 lg:w-1/4">
+							<a href="javascript:void(0);" class="ps-prd-item"
+								onclick="ngjfInifiniteScroll.pushLinkHistory(0,6,this); jfCtPrdChg(6,this,3); return false;"
+								data-goodsnum="6">
+								<div class="thumbs ratio1"> <img id="prodImg_6"
+										src="https://img.prospecs.com/prod/PR0UR25/PR0UR25F314/PR0UR25F314_01.jpg/dims/resizef/530x530/optimize"
+										onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/530x530/optimize'"
+										alt="PR0UR25F314">
+								</div>
+								<div class="desc">
+									<p class="name line-clamp-2">듀플렉스 GD WIDE</p>
+									<div class="price">
+										<input type="hidden" id="pri_6" value="139000">
+										<p class="amount">139,000원</p>
+									</div>
+									<div class="badge">
+										<span class="sex">
+											<span class="male">남</span>
+											<span class="female">여</span>
+										</span>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<!-- 상품이 없을 경우 -->
+					<div class="no-data" style="display: none;">
+						<p>상품 검색결과가 없습니다.</p>
+					</div>
+					<!-- //상품이 없을 경우-->
+				</section>
+			</form>
+			<!--//상품리스트[e]-->
+			<!--SORT POPUP[s]-->
+			<div class="ps-bottom-layer sortPopup" data-layer-target="b-layer1">
+				<div class="ps-bottom-layer-content">
+					<ul class="ps-bottom-layer--options autoScrollList">
+						<li class="on"><button type="button" class="">정렬</button></li>
+						<li><button type="button" class="">성별</button></li>
+						<li><button type="button" class="">특징</button></li>
+						<li><button type="button" class="">사이즈</button></li>
+						<li><button type="button" class="">컬러</button></li>
+						<li><button type="button" class="">가격</button></li>
+					</ul>
+					<!--Sort List[s]-->
+					<div class="inner">
+						<!--정렬[s]-->
+						<div class="ps-option-list">
+							<ul class="ps-list grid grid-cols-2 gap-20" id="sortList">
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="radio" name="sort_type" class="blackChk" value="new">
+											<span class="text">신상품순</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="radio" name="sort_type" class="blackChk" value="recommend">
+											<span class="text">추천순</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="radio" name="sort_type" class="blackChk" value="popular">
+											<span class="text">인기상품순</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="radio" name="sort_type" class="blackChk" value="high_price">
+											<span class="text">높은가격순</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="radio" name="sort_type" class="blackChk" value="low_price">
+											<span class="text">낮은가격순</span>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!--//정렬[e]-->
+						<!--성별[s]-->
+						<div class="ps-option-list">
+							<ul class="ps-list grid grid-cols-2 gap-20" id="rffSex">
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" name="chk_gender" class="blackChk" value="M">
+											<span class="text">남성</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" name="chk_gender" class="blackChk" value="W">
+											<span class="text">여성</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" name="chk_gender" class="blackChk" value="kids">
+											<span class="text">아동</span>
+										</label>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+						<!--//성별[e]-->
+						<!--특징[s]-->
+						<div class="ps-option-list">
+							<ul class="ps-list grid grid-cols-2 gap-20" id="rffTech">
+								<li>
+									<div class="ps-chkbox">
+										<label for="tech_CG04">
+											<input type="checkbox" name="chk_func" id="tech_CG04" class="blackChk"
+												value="CG04">
+											<span class="text">경량</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label for="tech_CG38">
+											<input type="checkbox" name="chk_func" id="tech_CG38" class="blackChk"
+												value="CG38">
+											<span class="text">접지력</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label for="tech_CG28">
+											<input type="checkbox" name="chk_func" id="tech_CG28" class="blackChk"
+												value="CG28">
+											<span class="text">고탄성</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label for="tech_CG45">
+											<input type="checkbox" name="chk_func" id="tech_CG45" class="blackChk"
+												value="CG45">
+											<span class="text">트레일 러닝</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label for="tech_CG44">
+											<input type="checkbox" name="chk_func" id="tech_CG44" class="blackChk"
+												value="CG44">
+											<span class="text">통기성</span>
+										</label>
+									</div>
+								</li>
+
+								<li style="display: none;">
+									<div class="ps-chkbox">
+										<label for="tech_CG42">
+											<input type="checkbox" name="chk_func" id="tech_CG42" class="blackChk"
+												value="CG42">
+											<span class="text">쿠셔닝</span>
+										</label>
+									</div>
+								</li>
+
+								<li style="display: none;">
+									<div class="ps-chkbox">
+										<label for="tech_CG41">
+											<input type="checkbox" name="chk_func" id="tech_CG41" class="blackChk"
+												value="CG41">
+											<span class="text">카본플레이트</span>
+										</label>
+									</div>
+								</li>
+
+								<li style="display: none;">
+									<div class="ps-chkbox">
+										<label for="tech_CG40">
+											<input type="checkbox" name="chk_func" id="tech_CG40" class="blackChk"
+												value="CG40">
+											<span class="text">초경량</span>
+										</label>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+						<!--//특징[e]-->
+						<!--사이즈[s]-->
+						<div class="ps-option-list">
+							<ul class="ps-list type-grid" id="rffSize">
+								<li>
+									<div class="button-chkbox">
+										<label for="size_230">
+											<input type="checkbox" name="chk_size" id="size_230" class="blackChk"
+												value="230">
+											<span class="text">230</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_235">
+											<input type="checkbox" name="chk_size" id="size_235" class="blackChk"
+												value="235">
+											<span class="text">235</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_240">
+											<input type="checkbox" name="chk_size" id="size_240" class="blackChk"
+												value="240">
+											<span class="text">240</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_245">
+											<input type="checkbox" name="chk_size" id="size_245" class="blackChk"
+												value="245">
+											<span class="text">245</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_250">
+											<input type="checkbox" name="chk_size" id="size_250" class="blackChk"
+												value="250">
+											<span class="text">250</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_255">
+											<input type="checkbox" name="chk_size" id="size_255" class="blackChk"
+												value="255">
+											<span class="text">255</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_260">
+											<input type="checkbox" name="chk_size" id="size_260" class="blackChk"
+												value="260">
+											<span class="text">260</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_265">
+											<input type="checkbox" name="chk_size" id="size_265" class="blackChk"
+												value="265">
+											<span class="text">265</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_270">
+											<input type="checkbox" name="chk_size" id="size_270" class="blackChk"
+												value="270">
+											<span class="text">270</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_275">
+											<input type="checkbox" name="chk_size" id="size_275" class="blackChk"
+												value="275">
+											<span class="text">275</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_280">
+											<input type="checkbox" name="chk_size" id="size_280" class="blackChk"
+												value="280">
+											<span class="text">280</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_285">
+											<input type="checkbox" name="chk_size" id="size_285" class="blackChk"
+												value="285">
+											<span class="text">285</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_290">
+											<input type="checkbox" name="chk_size" id="size_290" class="blackChk"
+												value="290">
+											<span class="text">290</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_295">
+											<input type="checkbox" name="chk_size" id="size_295" class="blackChk"
+												value="295">
+											<span class="text">295</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="button-chkbox">
+										<label for="size_300">
+											<input type="checkbox" name="chk_size" id="size_300" class="blackChk"
+												value="300">
+											<span class="text">300</span>
+										</label>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+						<!--//사이즈[e]-->
+						<!--컬러[s]-->
+						<div class="ps-option-list">
+							<ul class="ps-color-select" id="rffColor">
+
+								<li>
+									<div class="ps-chkbox rnd">
+										<label for="co_#ffffff">
+											<input type="checkbox" name="chk_color" id="co_#ffffff"
+												class="etc-color white" value="#ffffff">
+											<span class="text">화이트</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="ps-chkbox rnd">
+										<label for="co_#f5f5dc">
+											<input type="checkbox" name="chk_color" id="co_#f5f5dc"
+												class="etc-color beige" value="#f5f5dc">
+											<span class="text">베이지</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="ps-chkbox rnd">
+										<label for="co_#FF0000">
+											<input type="checkbox" name="chk_color" id="co_#FF0000"
+												class="etc-color red" value="#FF0000">
+											<span class="text">레드</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="ps-chkbox rnd">
+										<label for="co_#919499">
+											<input type="checkbox" name="chk_color" id="co_#919499"
+												class="etc-color grey" value="#919499">
+											<span class="text">그레이</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="ps-chkbox rnd">
+										<label for="co_#0000FF">
+											<input type="checkbox" name="chk_color" id="co_#0000FF"
+												class="etc-color blue" value="#0000FF">
+											<span class="text">블루</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="ps-chkbox rnd">
+										<label for="co_#000080">
+											<input type="checkbox" name="chk_color" id="co_#000080"
+												class="etc-color navy" value="#000080">
+											<span class="text">네이비</span>
+										</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="ps-chkbox rnd">
+										<label for="co_#000000">
+											<input type="checkbox" name="chk_color" id="co_#000000"
+												class="etc-color black" value="#000000">
+											<span class="text">블랙</span>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!--//컬러[e]-->
+						<!--가격[s]-->
+						<div class="ps-option-list">
+							<ul class="ps-list grid grid-cols-2 gap-20">
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" onclick="fn_checkPrice('1');">
+											<span class="text">3만원 이하</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" onclick="fn_checkPrice('2');">
+											<span class="text">5만원 이하</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" onclick="fn_checkPrice('3');">
+											<span class="text">7만원 이하</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" onclick="fn_checkPrice('4');">
+											<span class="text">10만원 이하</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" onclick="fn_checkPrice('5');">
+											<span class="text">20만원 이상</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
+											<input type="checkbox" onclick="fn_checkPrice('6');">
+											<span class="text">30만원 이상</span>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!--//가격[e]-->
+					</div>
+					<!--//Sort List[e]-->
+					<!--filter-footer[s]-->
+					<div class="filter-footer">
+						<button class="filter-btn-reset"><span></span>초기화</button>
+						<button class="filter-btn-submit">
+							<span>54</span>개 상품 보기
+						</button>
+					</div>
+					<!--//filter-footer[e]-->
+				</div>
+			</div>
+			<script>
+				//SORT 메뉴에 해당하는 컨텐츠 노출처리
+				$(function () {
+					function syncOptionListByIndex() {
+						var $options = $('.ps-bottom-layer--options li');
+						var idx = $options.filter('.on').index();
+						var $lists = $('.ps-bottom-layer .ps-option-list');
+
+						$lists.hide();
+						if (idx >= 0) {
+							$lists.eq(idx).show();
+						}
+					}
+					// 초기 동기화
+					syncOptionListByIndex();
+					// 클릭 시 동기화 (li에 on 클래스 토글이 이미 있다면 그대로 사용)
+					$('.ps-bottom-layer--options').on('click', 'li', function () {
+						$(this).addClass('on').siblings().removeClass('on');
+						syncOptionListByIndex();
+					});
+				});
+			</script>
+			<!--//SORT POPUP[e]-->
+		</main>
+		<!--//contents[e]-->
+		<!--footer[s]-->
+		<footer>
+			<div>
+				<p class="contact">
+					구매 / 배송 문의 <a href="tel:080-710-1020">080-710-1020</a><br>
+					상품정보 / AS문의 <a href="tel:080-023-1020">080-023-1020</a>
+				</p>
+				<p class="operation-time">
+					MON - FRI 09:00 ~ 17:00<br>
+					BREAK TIME : 12:30 ~ 13:30 (주말, 공휴일 휴무)
+				</p>
+				<ul class="info-toggle-list">
+					<li>
+						<p class="title bold">(주) LS네트웍스 사업자정보<i></i></p>
+						<div class="content">
+							<p>대표이사: 문성준</p>
+							<p>경상남도 김해시 호계로 428, 1층(부원동)</p>
+							<p>
+								개인정보관리 책임자 유승호
+								<a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6228104805" target="_blank"
+									class="underline">사업자정보확인</a>
+							</p>
+							<p>통신판매업신고번호 2016-경남김해-0229</p>
+							<p>사업자등록번호 622-81-04805</p>
+							<p>마케팅/제휴 문의 <a href=" mailto:prospecs.brand@gmail.com"
+									class="underline">prospecs.brand@gmail.com</a></p>
+						</div>
+					</li>
+					<li>
+						<p class="title bold">SGI 서울보증안내<i></i></p>
+						<div class="content">
+							현금 등으로 결제하신 경우, 안전 거래를 위해 프로스펙스닷컴 쇼핑몰에서 가입한
+							소비자피해보상보험 서비스를 이용하실 수 있습니다.
+						</div>
+					</li>
+					<li>
+						<p class="title">SUPPORT<i></i></p>
+						<div class="content">
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_STORE_INFO,'');">매장안내</a></p>
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_AS_GUIDE,'');">A/S 안내</a></p>
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_CALLCENTER,'');">고객센터</a></p>
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_APP_DOWN,'');">APP 다운로드</a></p>
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_GIFT_CARD,'');">GIFT CARD</a></p>
+						</div>
+					</li>
+					<li>
+						<p class="title">INFO<i></i></p>
+						<div class="content">
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_PRIVACY_POLICY,'');">개인정보처리방침</a>
+							</p>
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_USE_TERMS,'');">이용약관</a></p>
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_NOTICE,'');">공지사항</a></p>
+							<p><a href="javascript:void(0);" onclick="cfGoToPage(_PAGE_PROSPECS_NEWS,'');">뉴스</a></p>
+						</div>
+					</li>
+					<li>
+						<p class="title">SOCIAL<i></i></p>
+						<div class="content">
+							<p><a href="https://www.facebook.com/prospecs.kr" target="_blank">FACEBOOK</a></p>
+							<p><a href="https://www.youtube.com/user/ProspecsBrand/" target="_blank">YOUTUBE</a></p>
+							<p><a href="https://www.instagram.com/prospecs_kr/" target="_blank">INSTAGRAM</a></p>
+						</div>
+					</li>
+					<li>
+						<p class="title">FAMILY SITE<i></i></p>
+						<div class="content">
+							<p><a href="https://www.montbell.co.kr" target="_blank">MONT-BELL</a></p>
+						</div>
+					</li>
+				</ul>
+
+				<p class="copyright">
+					프로스펙스닷컴 | COPYRIGHT© LS NETWORKS CO. ALL RIGHTS RESERVED
+				</p>
+			</div>
+		</footer>
+		<!--//footer[e]-->
+	</div>
+</body>
+
+</html>
