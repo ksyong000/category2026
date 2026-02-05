@@ -21,6 +21,27 @@ button {
     outline: none;
 }
 
+/* 공통 재정의 2026 */
+.px-gutter {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+.ps-new .ps-chkbox>label {
+    height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.ps-new .ps-chkbox>label>input[type="checkbox"]+.text {
+    color: var(--color-70)
+}
+
+.ps-new .ps-chkbox>label>input[type="checkbox"]+.text::before {
+    width: 18px;
+    height: 18px;
+}
+
 :root {
     --color-0: #ffffff;
     --color-5: #f8f8f8;
@@ -1681,9 +1702,23 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    border-bottom: 1px solid var(--color-30);
     display: flex;
     gap: 10px;
+}
+
+.ps-new .ps-breadcrumb-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.ps-new .ps-breadcrumb-wrap:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-30);
 }
 
 .ps-new .ps-breadcrumb::-webkit-scrollbar {
@@ -1704,10 +1739,12 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 1px;
+    opacity: 0;
     background-color: var(--color-90);
     transition: all 0.3s;
+    z-index: 1;
 }
 
 .ps-new .ps-breadcrumb li+li {
@@ -1725,7 +1762,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 
 /* 20240603_2 */
 .ps-new .ps-breadcrumb li.on:after {
-    width: 100%;
+    opacity: 1;
 }
 
 .ps-new .ps-breadcrumb li.on a {
@@ -1752,7 +1789,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     white-space: nowrap;
     display: flex;
     gap: 4px;
-    padding-top: 12px;
+    margin-top: 12px;
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList::-webkit-scrollbar {
@@ -1844,6 +1881,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     font-weight: 400;
     width: 75px;
     outline: none;
+    color: var(--color-50);
 }
 
 .ps-new .sortPopup .ps-bottom-layer--options li {
@@ -1856,17 +1894,19 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 1px;
+    opacity: 0;
     background-color: var(--color-90);
     transition: all 0.3s;
+    z-index: 1;
 }
 
 .ps-new .sortPopup .ps-bottom-layer--options li.on:after {
-    width: 100%;
+    opacity: 1;
 }
 
-.ps-new .sortPopup .ps-bottom-layer--options li.on a {
+.ps-new .sortPopup .ps-bottom-layer--options li.on button {
     color: var(--color-90);
     font-weight: 600;
 }
@@ -1880,7 +1920,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 }
 
 .ps-new .sortPopup .ps-bottom-layer-content .ps-option-list .gap-20 {
-    gap: 20px 0;
+    gap: 8px 0;
 }
 
 .ps-new .sortPopup .ps-bottom-layer-content .ps-option-list .type-grid {
@@ -1941,7 +1981,9 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 }
 
 .ps-new .ps-prd-list--wrap {
-    gap: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 8px;
 }
 
 .ps-new .ps-prd-list--util {
@@ -2072,6 +2114,11 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 
 .ps-new .ps-chkbox.rnd {
     width: 100%;
+}
+
+.ps-new .ps-chkbox.rnd>label>input[type="checkbox"]+.text::before {
+    width: 32px;
+    height: 32px;
 }
 
 .ps-new .ps-chkbox.rnd>label>input[type="checkbox"]+.text {

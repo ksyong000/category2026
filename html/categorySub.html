@@ -670,7 +670,7 @@
               </div>
               <!-- INSERT_YOUR_CODE -->
               <div id="customSelect" class="custom-select">
-                <div class="custom-select-selected">SORT</div>
+                <div class="custom-select-selected">RECOM</div>
                 <div class="custom-select-options" style="display: none">
                   <div class="custom-select-option" data-value="MD_RCMD_REG">
                     NEW
@@ -778,7 +778,7 @@
               </div>
               <!--배너-->
               <div class="ps-col w-full my-5 px-5">
-                <a href="javascript:;" class="banner-item">
+                <a href="https://www.prospecs.com/planning.do?cmd=getPlanningDetail&datacls=9572" class="banner-item">
                   <img src="../images/ps-new/categoryBanner.png" alt="banner" />
                 </a>
               </div>
@@ -1294,7 +1294,6 @@
                           </label>
                         </div>
                       </li>
-
                       <li id="li_color_#f5f5dc" class="" style="">
                         <div class="ps-chkbox">
                           <label for="co_#f5f5dc">
@@ -1304,7 +1303,6 @@
                           </label>
                         </div>
                       </li>
-
                       <li id="li_color_#FF0000" class="" style="">
                         <div class="ps-chkbox">
                           <label for="co_#FF0000">
@@ -1314,7 +1312,6 @@
                           </label>
                         </div>
                       </li>
-
                       <li id="li_color_#919499" class="" style="">
                         <div class="ps-chkbox">
                           <label for="co_#919499">
@@ -1324,7 +1321,71 @@
                           </label>
                         </div>
                       </li>
+                      <li id="li_color_#0000FF" class="" style="">
+                        <div class="ps-chkbox">
+                          <label for="co_#0000FF">
+                            <input type="checkbox" name="chk_color" id="co_#0000FF" class="etc-color blue"
+                              value="#0000FF" onclick="jfSearchProductList();" />
+                            <span class="text">블루</span>
+                          </label>
+                        </div>
+                      </li>
 
+                      <li id="li_color_#000080" class="" style="">
+                        <div class="ps-chkbox">
+                          <label for="co_#000080">
+                            <input type="checkbox" name="chk_color" id="co_#000080" class="etc-color navy"
+                              value="#000080" onclick="jfSearchProductList();" />
+                            <span class="text">네이비</span>
+                          </label>
+                        </div>
+                      </li>
+
+                      <li id="li_color_#000000" class="" style="">
+                        <div class="ps-chkbox">
+                          <label for="co_#000000">
+                            <input type="checkbox" name="chk_color" id="co_#000000" class="etc-color black"
+                              value="#000000" onclick="jfSearchProductList();" />
+                            <span class="text">블랙</span>
+                          </label>
+                        </div>
+                      </li>
+                      <li id="li_color_#ffffff" class="" style="">
+                        <div class="ps-chkbox">
+                          <label for="co_#ffffff">
+                            <input type="checkbox" name="chk_color" id="co_#ffffff" class="etc-color white"
+                              value="#ffffff" onclick="jfSearchProductList();" />
+                            <span class="text">화이트</span>
+                          </label>
+                        </div>
+                      </li>
+                      <li id="li_color_#f5f5dc" class="" style="">
+                        <div class="ps-chkbox">
+                          <label for="co_#f5f5dc">
+                            <input type="checkbox" name="chk_color" id="co_#f5f5dc" class="etc-color beige"
+                              value="#f5f5dc" onclick="jfSearchProductList();" />
+                            <span class="text">베이지</span>
+                          </label>
+                        </div>
+                      </li>
+                      <li id="li_color_#FF0000" class="" style="">
+                        <div class="ps-chkbox">
+                          <label for="co_#FF0000">
+                            <input type="checkbox" name="chk_color" id="co_#FF0000" class="etc-color red"
+                              value="#FF0000" onclick="jfSearchProductList();" />
+                            <span class="text">레드</span>
+                          </label>
+                        </div>
+                      </li>
+                      <li id="li_color_#919499" class="" style="">
+                        <div class="ps-chkbox">
+                          <label for="co_#919499">
+                            <input type="checkbox" name="chk_color" id="co_#919499" class="etc-color grey"
+                              value="#919499" onclick="jfSearchProductList();" />
+                            <span class="text">그레이</span>
+                          </label>
+                        </div>
+                      </li>
                       <li id="li_color_#0000FF" class="" style="">
                         <div class="ps-chkbox">
                           <label for="co_#0000FF">
@@ -1355,10 +1416,68 @@
                         </div>
                       </li>
                     </ul>
+                    <button class="filter-item-more">더보기</button>
                   </div>
                 </div>
               </div>
               <!--// 필터 항목 4 -->
+              <!--가격대-->
+              <div class="filter-item">
+                <div class="filter-item-title">
+                  <strong>가격대</strong>
+                  <button class="filter-item-close"><span></span></button>
+                </div>
+                <div class="filter-item-content">
+                  <ul class="filter-item-list">
+                    <li>
+                      <div class="ps-chkbox">
+                        <label for="chk_price_1">
+                          <input type="checkbox" name="chk_price" id="chk_price_1" class="priceChk" value=""
+                            onclick="" />
+                          <span class="text">3만원 이하</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ps-chkbox">
+                        <label for="chk_price_2">
+                          <input type="checkbox" name="chk_price" id="chk_price_2" class="priceChk" value=""
+                            onclick="" />
+                          <span class="text">5만원 이하</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ps-chkbox">
+                        <label for="chk_price_3">
+                          <input type="checkbox" name="chk_price" id="chk_price_3" class="priceChk" value=""
+                            onclick="" />
+                          <span class="text">10만원 이하</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ps-chkbox">
+                        <label for="chk_price_4">
+                          <input type="checkbox" name="chk_price" id="chk_price_4" class="priceChk" value=""
+                            onclick="" />
+                          <span class="text">20만원 이하</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ps-chkbox">
+                        <label for="chk_price_5">
+                          <input type="checkbox" name="chk_price" id="chk_price_5" class="priceChk" value=""
+                            onclick="" />
+                          <span class="text">30만원 이하</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!--//가격대-->
             </div>
             <div class="filter-footer">
               <button class="filter-btn-reset"><span></span>초기화</button>
@@ -1448,7 +1567,7 @@
 
               // selected-item이 있을 때만 filter-selected-items 표시
               if ($selectedItems.find(".selected-item").length > 0) {
-                $selectedItems.show();
+                $selectedItems.css('display', 'flex');
               } else {
                 $selectedItems.hide();
               }
@@ -1516,6 +1635,69 @@
 
             // 최초 실행하여 상태 동기화
             updateFilterSelectedItems();
+
+            // 컬러 필터 .filter-item-more Show/Hide 처리 및 더보기 기능
+            function updateColorFilterMoreButton() {
+              var $colorWrap = $(".ps--opt-wrap");
+              $colorWrap.each(function () {
+                var $colorsUl = $(this).find('.opt-list.colors');
+                var $colorLis = $colorsUl.find('li');
+                var $moreBtn = $(this).parent().find('.filter-item-more');
+                if ($colorLis.length > 10) {
+                  $moreBtn.show();
+                  // 기본 - 10개까지만 보여주기 (닫힌 상태)
+                  if (!$moreBtn.data('opened')) {
+                    $colorLis.each(function (idx) {
+                      if (idx > 9) {
+                        $(this).stop(true, true).slideUp(200);
+                      } else {
+                        $(this).stop(true, true).slideDown(200);
+                      }
+                    });
+                    $moreBtn.text('더보기');
+                  }
+                } else {
+                  // li 10개 이하면 모두 보이고 더보기버튼 숨김
+                  $moreBtn.hide();
+                  $colorLis.each(function (idx) {
+                    $(this).stop(true, true).slideDown(200);
+                  });
+                }
+              });
+            }
+
+            // 초기호출 및 창 크기 바뀔때도 더보기 버튼 처리
+            updateColorFilterMoreButton();
+
+            // 더보기/닫기 클릭 시 동작
+            $(document).on('click', '.filter-item-more', function () {
+              var $btn = $(this);
+              var $wrap = $btn.closest('.filter-item-content').find('.ps--opt-wrap');
+              var $colorsUl = $wrap.find('.opt-list.colors');
+              var $colorLis = $colorsUl.find('li');
+              if (!$btn.data('opened')) {
+                // 더보기 (펼침) → 모두 보이기
+                $colorLis.each(function (idx) {
+                  $(this).stop(true, true).slideDown(200);
+                });
+                $btn.text('닫기');
+                $btn.data('opened', true);
+              } else {
+                // 닫기 → 10개만 보이기
+                $colorLis.each(function (idx) {
+                  if (idx > 9) {
+                    $(this).stop(true, true).slideUp(200);
+                  } else {
+                    $(this).stop(true, true).slideDown(200);
+                  }
+                });
+                $btn.text('더보기');
+                $btn.data('opened', false);
+              }
+            });
+
+            // 만약 컬러 옵션 항목이 동적으로 바뀐다면(ajax 등), 아래 함수 재호출 필요
+            // 예시: updateColorFilterMoreButton();
           });
         </script>
         <!--//2026필터영역 변경-->
