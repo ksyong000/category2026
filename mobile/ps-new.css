@@ -1792,7 +1792,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 0 10px;
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList li a {
