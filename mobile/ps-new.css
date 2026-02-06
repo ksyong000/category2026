@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* 스타일 수정 테스트 */
 html,
 body {
@@ -1717,7 +1718,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     display: none
 }
 
-.ps-new .ps-breadcrumb{
+.ps-new .ps-breadcrumb {
     padding: 0 6px;
 }
 
@@ -1764,7 +1765,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 
 .ps-new .ps-breadcrumb li.on a {
     color: var(--color-90);
-    font-weight:600;
+    font-weight: 600;
 }
 
 .ps-new .ps-sub-gnbWrap {
@@ -1826,7 +1827,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     font-weight: 500;
     display: flex;
     gap: 4px;
-    font-size:14px;
+    font-size: 14px;
 }
 
 .ps-new .ps-sub-goodsInfo .ps-sub-goodsInfo--count span {
@@ -1869,13 +1870,26 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     overflow-y: auto;
 }
 
+.ps-new .sortPopup .scroll-area-wrap {
+    position: relative;
+}
+
+.ps-new .sortPopup .scroll-area-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-30);
+}
+
 .ps-new .sortPopup .ps-bottom-layer--options {
     height: 48px;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     display: flex;
-    border-bottom: 1px solid var(--color-30);
 }
 
 .ps-new .sortPopup .ps-bottom-layer--options::-webkit-scrollbar {
@@ -2121,6 +2135,10 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 }
 
 .ps-new .ps-chkbox.rnd {
+    width: 100%;
+}
+
+.ps-new .ps-chkbox.rnd>label {
     width: 100%;
 }
 
