@@ -1781,7 +1781,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     white-space: nowrap;
     display: flex;
     gap: 4px;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList::-webkit-scrollbar {
