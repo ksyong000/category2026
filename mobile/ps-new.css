@@ -1717,6 +1717,11 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     display: none
 }
 
+.ps-new .ps-breadcrumb{
+    padding: 0 6px;
+}
+
+
 .ps-new .ps-breadcrumb li {
     flex: 0 0 auto;
     height: 100%;
