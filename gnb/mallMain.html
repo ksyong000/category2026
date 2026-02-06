@@ -765,7 +765,7 @@ groobee("siteType", "custom");
                     var $gnbButtons = $('.gnb-left-area .gnb-left-area-btn');
                     var $subMenusArea = $('.sub-menus-area');
                     var $subMenus = $subMenusArea.find('.sub-menus');
-
+                    var $html = $('html');
                     // 높이값 계산 및 설정 함수
                     function setSubMenusPosition() {
                         var topBannerHeight = 0;
@@ -800,6 +800,7 @@ groobee("siteType", "custom");
                     function hideAllSubMenus() {
                         $subMenusArea.hide();
                         $subMenus.hide();
+                        $html.removeAttr('style');
                     }
 
                     // gnb-left-area의 button에 hover되면 동일한 index의 sub-menus와 sub-menus-area에 show() 처리 및 active 클래스 부여
@@ -812,7 +813,7 @@ groobee("siteType", "custom");
                         $subMenus.hide();
                         $subMenusArea.show();
                         $subMenus.eq(index).css('display', 'flex');
-
+                        $html.css('overflow', 'hidden');
                         // 스크롤값이 0인 경우 header의 transparent 클래스 삭제
                         if ($(window).scrollTop() === 0) {
                             $('header').removeClass('transparent');
