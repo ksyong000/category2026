@@ -1112,8 +1112,8 @@ header .sub-menus-area .sub-menus-blurDim {
     right: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 header .sub-menus-area .sub-menus {
@@ -1138,7 +1138,7 @@ header .sub-menus-area .sub-menus-category {
 header .sub-menus-area .sub-menus-category a {
     font-size: 15px;
     font-weight: 400;
-    color: #555;
+    color: #1E1E1E;
     line-height: 150%;
     text-transform: uppercase;
     position: relative;
