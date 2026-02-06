@@ -1110,9 +1110,9 @@ header .sub-menus-area .sub-menus-blurDim {
 
 header .sub-menus-area .sub-menus {
     width: 480px;
-    display: none;
     height: 100%;
     flex-direction: column;
+    display: none;
     gap: 40px;
     background-color: white;
     padding: 32px 80px 54px 70px;
