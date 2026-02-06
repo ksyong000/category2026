@@ -1829,6 +1829,11 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     font-size:14px;
 }
 
+.ps-new .ps-sub-goodsInfo .ps-sub-goodsInfo--count span {
+    font-family: 'GeneralSans-Regular';
+    font-weight: 700;
+}
+
 .ps-new .ps-sub-goodsInfo .ps-sub-goodsInfo--sorting-btn {
     outline: none;
 }
