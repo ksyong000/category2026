@@ -812,7 +812,7 @@ groobee("siteType", "custom");
                         $(this).addClass('active');
                         $subMenus.hide();
                         $subMenusArea.show();
-                        $subMenus.eq(index).show();
+                        $subMenus.eq(index).css('display', 'flex');
 
                         // 스크롤값이 0인 경우 header의 transparent 클래스 삭제
                         if ($(window).scrollTop() === 0) {
