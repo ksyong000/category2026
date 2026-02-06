@@ -1046,14 +1046,14 @@ header .gnb-area .gnb-right-area {
     gap: 24px;
     position: absolute;
     right: 80px;
+    width: 262px;
+    justify-content: flex-end;
 }
 
 header .gnb-area .gnb-right-area .gnb-right-ico span {
     display: inline-block;
     width: 24px;
     height: 24px;
-    width: 262px;
-    justify-content: flex-end;
 }
 
 header .gnb-area .gnb-right-area .gnb-right-area-btn {
