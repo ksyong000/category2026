@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+/* 스타일 수정 테스트 */
 html,
 body {
     font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', sans-serif;
@@ -1816,6 +1816,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     font-weight: 500;
     display: flex;
     gap: 4px;
+    font-size:14px;
 }
 
 .ps-new .ps-sub-goodsInfo .ps-sub-goodsInfo--sorting-btn {
