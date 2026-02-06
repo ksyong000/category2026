@@ -339,8 +339,6 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 }
 
 /* 20240516 gnb�고듃援듦린�섏젙 */
-/* main-swiper */
-.ps-new .key-visual--wrap {}
 
 /* 20240514 */
 .ps-new .key-visual--wrap .swiper-slide a {
@@ -348,10 +346,6 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 }
 
 /* 20240514 */
-/* .topSlideY .ps-new .key-visual--wrap .swiper-slide{height:auto;} 20240513  */
-.topSlideY .ps-new .key-visual--wrap .swiper-pagination-progressbar {
-    /* top:calc(100vh - 320px); */
-}
 
 .ps-new .topAreaSwiper {
     background: none;
@@ -1348,8 +1342,6 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     margin-top: -6px
 }
 
-.ps-new .main-news--list .ps-news-item .desc * {}
-
 .ps-new .main-news--list .ps-news-item .desc span {
     font-size: 12px;
     color: var(--color-50);
@@ -1821,7 +1813,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 
 .ps-new .ps-sub-goodsInfo .ps-sub-goodsInfo--count {
     font-family: 'GeneralSans-Regular';
-    font-wight: 500;
+    font-weight: 500;
     display: flex;
     gap: 4px;
 }
@@ -2550,8 +2542,6 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 .pr-about .about-sub.mani .mani01 {
     position: relative
 }
-
-.pr-about .about-sub.mani .mani01 .bg {}
 
 .pr-about .about-sub.mani .mani01 .desc-wrp {
     position: relative;
