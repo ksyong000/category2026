@@ -1880,7 +1880,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 .ps-new .sortPopup .ps-bottom-layer--options li,
 .ps-new .sortPopup .ps-bottom-layer--options li button {
     height: 100%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     width: 75px;
     outline: none;
