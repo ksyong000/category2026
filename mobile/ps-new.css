@@ -1816,6 +1816,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     font-weight: 500;
     display: flex;
     gap: 4px;
+    font-size:14px;
 }
 
 .ps-new .ps-sub-goodsInfo .ps-sub-goodsInfo--sorting-btn {
