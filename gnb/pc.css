@@ -7,6 +7,10 @@ body {
 
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -141,7 +145,7 @@ header .gnb-area .search-area {
     float: right;
     margin-right: 5px;
     padding-bottom: 3px;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.2s ease-in-out;
 }
 
 header .gnb-area .search-area.active {

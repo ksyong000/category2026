@@ -673,8 +673,7 @@ groobee("siteType", "custom");
                 <div class="gnb-right-area">
                     <div class="gnb-right-area-btn">
                         <div class="search-area">
-                            <input type="text" name="qt" placeholder="겨울 러닝을 위한 퍼포먼스 웨어" class="search-input"
-                                autocomplete="off" value=""
+                            <input type="text" name="qt" placeholder="" class="search-input" autocomplete="off" value=""
                                 onkeypress="if(window.event.keyCode==13){jfSearchProductByGnb(document.gnbSearchForm.qt.value);}">
                             <input type="hidden" name="cmd" value="getProductSearch">
                             <input type="hidden" name="from" value="gnb">
@@ -858,7 +857,7 @@ groobee("siteType", "custom");
                         var $searchArea = $('.search-area');
                         var $searchInput = $('.search-input');
                         var inputValue = $searchInput.val();
-
+                        $searchInput.focus();
                         // 입력값이 있으면 검색 실행, 없으면 토글 처리
                         if (inputValue && inputValue.trim() !== '') {
                             // 검색 실행 (form submit 또는 검색 함수 호출)
