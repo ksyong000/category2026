@@ -1695,7 +1695,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     overflow-y: hidden;
     white-space: nowrap;
     display: flex;
-    gap: 10px;
+    gap: 4px;
 }
 
 .ps-new .ps-breadcrumb-wrap {
@@ -1722,7 +1722,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 16px;
     position: relative;
 }
 
@@ -1746,9 +1746,9 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 /* 20240603_2 */
 .ps-new .ps-breadcrumb li a {
     background: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    color: var(--color-50);
+    color: var(--color-70);
     padding: 0
 }
 
@@ -1781,7 +1781,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     white-space: nowrap;
     display: flex;
     gap: 4px;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList::-webkit-scrollbar {
@@ -1792,13 +1792,13 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 16px;
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList li a {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
-    color: var(--color-50);
+    color: var(--color-70);
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList li.on a {
