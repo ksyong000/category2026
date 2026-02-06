@@ -1747,7 +1747,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 .ps-new .ps-breadcrumb li a {
     background: none;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--color-70);
     padding: 0
 }
