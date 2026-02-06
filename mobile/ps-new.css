@@ -1695,7 +1695,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     overflow-y: hidden;
     white-space: nowrap;
     display: flex;
-    gap: 4px;
+    gap: 0;
 }
 
 .ps-new .ps-breadcrumb-wrap {
@@ -1751,7 +1751,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 /* 20240603_2 */
 .ps-new .ps-breadcrumb li a {
     background: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     color: var(--color-70);
     padding: 0
