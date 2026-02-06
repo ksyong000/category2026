@@ -2159,7 +2159,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 }
 
 .ps-new .button-chkbox label .text {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 300;
     z-index: 1;
     position: absolute;
