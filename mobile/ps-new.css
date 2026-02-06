@@ -1884,7 +1884,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     font-weight: 400;
     width: 75px;
     outline: none;
-    color: var(--color-50);
+    color: var(--color-70);
 }
 
 .ps-new .sortPopup .ps-bottom-layer--options li {
