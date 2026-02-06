@@ -1759,6 +1759,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 
 .ps-new .ps-breadcrumb li.on a {
     color: var(--color-90);
+    font-weight:600;
 }
 
 .ps-new .ps-sub-gnbWrap {
