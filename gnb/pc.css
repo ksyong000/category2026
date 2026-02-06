@@ -1112,7 +1112,6 @@ header .sub-menus-area .sub-menus {
     width: 480px;
     display: none;
     height: 100%;
-    display: flex;
     flex-direction: column;
     gap: 40px;
     background-color: white;
