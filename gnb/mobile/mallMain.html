@@ -443,14 +443,24 @@
                     document.querySelector('body').classList.toggle('show-aside');
                 })
 
-                document.querySelectorAll('aside .category-menus li').forEach(el => {
+                const liList = document.querySelectorAll('aside .category-menus li');
+                liList.forEach((el, index) => {
                     const subMenus = el.querySelector('.sub-menus');
                     if (subMenus) {
                         el.classList.add('toggle');
 
                         el.children[0].addEventListener('click', function () {
                             el.classList.toggle('toggle-open');
-
+                            if (el.classList.contains('toggle-open')) {
+                                const aside = document.querySelector('.show-aside aside');
+                                if (aside) {
+                                    const isLastLi = !el.nextElementSibling;
+                                    aside.scrollTo({
+                                        top: isLastLi ? aside.scrollHeight : 350,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }
                         });
                     }
                 })
