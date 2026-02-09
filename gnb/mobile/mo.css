@@ -422,6 +422,8 @@ header .gnb-area .menus>li .sub-menus>li:hover {
 
 header .gnb-area .left-menus {
     height: 20px;
+    display: flex;
+    gap: 1.5rem;
 }
 
 header .gnb-area .left-menus button {
@@ -430,14 +432,20 @@ header .gnb-area .left-menus button {
     display: inline-block;
     text-indent: -9999px;
     overflow: hidden;
-    background: url(../../images/ps-new/ico_header_menu_bk.svg) no-repeat center center/contain;
     outline: none;
+}
+
+header .gnb-area .left-menus .menu-btn {
+    background: url(../../images/ps-new/ico_header_menu_bk.svg) no-repeat center center/contain;
+}
+
+header .gnb-area .left-menus .search-btn {
+    background: url(../../images/ps-new/ico_header_search_bk.svg) no-repeat center center/contain;
 }
 
 header .gnb-area .right-menus {
     display: flex;
-    gap: 1.25rem;
-    margin-top: 0.125rem;
+    gap: 1.5rem;
     margin-left: auto;
     height: 20px;
 }
@@ -459,13 +467,15 @@ header .gnb-area .right-menus>li button.cart-btn span {
     border-radius: 50%;
     border: 1.6px solid #000;
     color: #000;
+    width: 19px;
+    height: 19px;
     font-size: 12px;
     font-weight: 500;
     text-indent: 0;
 }
 
-header .gnb-area .right-menus>li button.search-btn span {
-    background: url(../../images/ps-new/ico_header_search_bk.svg) no-repeat center center/contain;
+header .gnb-area .right-menus>li button.mypage-btn span {
+    background: url(../../images/ps-new/ico_header_mypage_bk.svg) no-repeat center center/contain;
 }
 
 /* 
@@ -510,7 +520,7 @@ body:not(.show-aside) header.transparent .gnb-area .menus a {
     color: white;
 }
 
-body.show-aside header .gnb-area .left-menus button {
+body.show-aside header .gnb-area .left-menus .menu-btn {
     text-indent: -999em;
     outline: none;
     display: inline-block;
@@ -519,17 +529,19 @@ body.show-aside header .gnb-area .left-menus button {
     background: url(../../images/ps-new/ico_header_menu_close.svg) no-repeat center center/contain;
 }
 
-body:not(.show-aside) header.transparent .gnb-area .left-menus button {
+body:not(.show-aside) header.transparent .gnb-area .left-menus .menu-btn {
 
     background: url(../../images/ps-new/ico_header_menu_wh.svg) no-repeat center center/contain;
 }
 
-body:not(.show-aside) header.transparent .gnb-area .right-menus .search-btn {
+body:not(.show-aside) header.transparent .gnb-area .left-menus .search-btn {
+
+    background: url(../../images/ps-new/ico_header_search_wh.svg) no-repeat center center/contain;
     filter: invert(0);
 }
 
-body:not(.show-aside) header.transparent .gnb-area .right-menus .search-btn span {
-    background: url(../../images/ps-new/ico_header_search_wh.svg) no-repeat center center/contain;
+body:not(.show-aside) header.transparent .gnb-area .right-menus .mypage-btn span {
+    background: url(../../images/ps-new/ico_header_mypage_wh.svg) no-repeat center center/contain;
 }
 
 body:not(.show-aside) header.transparent .gnb-area .right-menus .cart-btn span {

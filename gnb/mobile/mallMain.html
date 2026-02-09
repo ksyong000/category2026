@@ -160,11 +160,12 @@
                 </div>
                 <div class="left-menus">
                     <button class="gnb-left-area-btn menu-btn" id="sideMenuClose">메뉴보기</button>
+                    <button class="search-btn" data-open-layer="commonSearch" id="search"
+                        onclick="jfGnbSearch();">검색</button>
                 </div>
                 <ul class="right-menus">
                     <li>
-                        <button class="search-btn" data-open-layer="commonSearch" id="search"
-                            onclick="jfGnbSearch();"><span>검색</span></button>
+                        <button class="mypage-btn"><span>마이페이지</span></button>
                     </li>
                     <li class="has-cart">
                         <button class="cart-btn" onclick="cfGoToPage(_PAGE_CART_LIST);"><span>0</span></button>
@@ -174,11 +175,11 @@
             </div>
             <aside>
 
-                <div class="logout-area">
-                    <p class="top-message">
+                <div class="logout-area" style="display: none;">
+                    <!-- <p class="top-message" style="display: none;">
                         <a class="login-page-btn underline" href="javascript:void('0');"
                             onclick="cfGoToPage(_PAGE_LOGIN); return false;">로그인</a>하시고,<br />다양한 혜택을 만나보세요!
-                    </p>
+                    </p> -->
                     <p class="top-message" style="display: none;">
                         안녕하세요 <span class="underline"
                             onclick="cfGoToPage(_PAGE_MYPAGE); return false;">프로스펙스</span>님<br>
@@ -250,7 +251,7 @@
                                 </div>
                             </ul>
                         </li>
-                        <li>
+                        <li class="toggle">
                             <a href="javascript:void('0');" onclick="cfGoToPage(_PAGE_SMART_FIT); return false;">
                                 ONE SPEC
                             </a>
@@ -282,6 +283,7 @@
                         </li>
                     </ul>
                     <ul class="bot-links">
+                        <li><a href="javascript:;" class="font-kor">멤버십카드</a></li>
                         <li><a href="javascript:;" class="font-kor"
                                 onclick="cfGoToPage(_PAGE_STORE_INFO); return false;">매장안내</a></li>
                         <li><a href="javascript:;" class="font-kor">A/S 안내</a></li>
@@ -456,7 +458,7 @@
                                 if (aside) {
                                     const isLastLi = !el.nextElementSibling;
                                     aside.scrollTo({
-                                        top: isLastLi ? aside.scrollHeight : 350,
+                                        top: isLastLi ? aside.scrollHeight : 230,
                                         behavior: 'smooth'
                                     });
                                 }
