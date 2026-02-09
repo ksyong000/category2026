@@ -1123,7 +1123,7 @@ header .sub-menus-area .sub-menus {
     display: none;
     gap: 40px;
     background-color: white;
-    padding: 32px 80px 54px 80px;
+    padding: 32px 80px 48px 80px;
     position: relative;
     z-index: 1000;
     border-top: 1px solid #D9D9D9;
@@ -1172,6 +1172,7 @@ header .sub-menus-area .sub-menus-category.head-text a {
 
 header .sub-menus-area .sub-menus-category.info a {
     font-size: 14px;
+    color: #555555;
 }
 
 header .sub-menus-area .one-spec-menus .sub-menus-category,
@@ -1180,7 +1181,7 @@ header .sub-menus-area .about-menus .sub-menus-category {
 }
 
 header .sub-menus-area .sub-menus-banner {
-    height: 436px;
+    height: 428px;
     position: relative;
 }
 
