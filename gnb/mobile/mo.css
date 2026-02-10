@@ -161,6 +161,7 @@ body.show-aside aside .category-menus>li .sub-menus li a {
     line-height: 39px;
     font-weight: 400;
     color: #1e1e1e;
+    margin-right: 1.5rem;
 }
 
 body.show-aside aside .category-menus>li .sub-menus .sub-menu-img {
