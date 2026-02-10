@@ -606,6 +606,7 @@ header .gnb-area .right-menus>li button.cart-btn span {
 
 header .gnb-area .right-menus>li button.cart-btn span i {
     font-style: normal;
+    align-items: center;
 }
 
 header .gnb-area .right-menus>li button.mypage-btn span {
@@ -1308,11 +1309,11 @@ footer .copyright {
 }
 
 #cart-cnt-effect.is-anim {
-    animation: cartCountUp 0.2s ease;
+    animation: cartCountUp 0.3s ease;
 }
 
 #cart-cnt-effect.is-anim-down {
-    animation: cartCountDown 0.2s ease;
+    animation: cartCountDown 0.3s ease;
 }
 
 @keyframes cartCountUp {
