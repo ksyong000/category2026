@@ -373,29 +373,21 @@
 				<!--1depth[s]-->
 				<div class="ps-breadcrumb-wrap">
 					<ul class="ps-breadcrumb flex items-center autoScrollList">
-						<li class="on"><a href="javascript:void(0);"
-								onclick="cfCategoryItmKinds(1100,2,'','',''); return false;">신발전체</a></li>
-						<li class="" id="mdGnb_1"><a href="javascript:jfSearchLnbList(1101,22,1,'러닝화','');">러닝화</a></li>
-						<li class="" id="mdGnb_2"><a href="javascript:jfSearchLnbList(1102,22,2,'워킹화','');">워킹화</a>
+						<li class="on" data-tab="all"><a href="javascript:void(0);">신발전체</a></li>
+						<li class="" id="mdGnb_1" data-tab="running"><a href="javascript:void(0);">러닝화</a></li>
+						<li class="" id="mdGnb_2" data-tab="walking"><a href="javascript:void(0);">워킹화</a>
 						</li>
-						<li class="" id="mdGnb_3"><a href="javascript:jfSearchLnbList(1103,22,3,'트레킹화','');">트레킹화</a>
+						<li class="" id="mdGnb_3" data-tab="trekking"><a href="javascript:void(0);">트레킹화</a>
 						</li>
-						<li class="" id="mdGnb_4"><a href="javascript:jfSearchLnbList(1104,22,4,'쿠션화','');">쿠션화</a></li>
-						<li class="" id="mdGnb_5"><a
-								href="javascript:jfSearchLnbList(1105,22,5,'트레일러닝화','');">트레일러닝화</a>
+						<li class="" id="mdGnb_4" data-tab="cushion"><a href="javascript:void(0);">쿠션화</a></li>
+						<li class="" id="mdGnb_5" data-tab="trail"><a href="javascript:void(0);">트레일러닝화</a>
 						</li>
 					</ul>
+					<div class="ps-tab--indicator"></div>
 				</div>
 				<!--//1depth[e]-->
 				<!--2depth[s]-->
-				<ul class="ps-sub-gnbList autoScrollList">
-					<li class="on"><a href="javascript:void(0);">전체</a></li>
-					<li><a href="javascript:void(0);">레이싱화</a></li>
-					<li><a href="javascript:void(0);">안정화</a></li>
-					<li><a href="javascript:void(0);">쿠션화</a></li>
-					<li><a href="javascript:void(0);">트레일러닝화</a></li>
-					<li><a href="javascript:void(0);">그냥운동화</a></li>
-				</ul>
+				<ul class="ps-sub-gnbList autoScrollList"></ul>
 				<!--//2depth[e]-->
 				<!--상품수량 & SORTING[s]-->
 				<div class="ps-sub-goodsInfo px-gutter flex">
@@ -424,8 +416,70 @@
 				<!--//상품수량 & SORTING[e]-->
 			</div>
 			<script>
-				// autoScrollList
+				// autoScrollList + 3depth render
 				document.addEventListener('DOMContentLoaded', function () {
+					var tab3DepthMap = {
+						all: [],
+						running: [
+							{ name: '전체', link: 'javascript:void(0);' },
+							{ name: '레이싱화', link: 'javascript:void(0);' },
+							{ name: '안정화', link: 'javascript:void(0);' },
+							{ name: '쿠션화', link: 'javascript:void(0);' },
+							{ name: '트레일러닝화', link: 'javascript:void(0);' },
+						],
+						walking: [],
+						trekking: [],
+						cushion: [{ name: "전체", link: "javascript:;" },
+						{ name: "데일리", link: "javascript:;" },
+						{ name: "컴포트", link: "javascript:;" },
+						{ name: "피트니스", link: "javascript:;" },],
+						trail: [{ name: "전체", link: "javascript:;" },
+						{ name: "클래식", link: "javascript:;" },
+						{ name: "레트로", link: "javascript:;" },],
+					};
+
+					var breadcrumbWrap = document.querySelector('.ps-breadcrumb-wrap');
+					var breadcrumb = document.querySelector('.ps-breadcrumb');
+					var indicator = breadcrumbWrap ? breadcrumbWrap.querySelector('.ps-tab--indicator') : null;
+					var subGnb = document.querySelector('.ps-sub-gnbList');
+
+					function updateBreadcrumbIndicator() {
+						if (!breadcrumb || !indicator || !breadcrumbWrap) return;
+						var active = breadcrumb.querySelector('li.on');
+						if (!active) return;
+						var wrapRect = breadcrumbWrap.getBoundingClientRect();
+						var activeRect = active.getBoundingClientRect();
+						var left = activeRect.left - wrapRect.left;
+						indicator.style.width = activeRect.width + 'px';
+						indicator.style.transform = 'translateX(' + left + 'px)';
+					}
+
+					function render3Depth(tabKey) {
+						if (!subGnb) return;
+						var list = tab3DepthMap[tabKey] || [];
+						if (!list.length) {
+							subGnb.classList.add('is-hidden');
+							return;
+						}
+
+						var html = '';
+						list.forEach(function (item, idx) {
+							html += '<li' + (idx === 0 ? ' class="on"' : '') + '><a href="' + item.link + '">' + item.name + '</a></li>';
+						});
+
+						var delay = 0;
+						if (!subGnb.classList.contains('is-hidden')) {
+							subGnb.classList.add('is-hidden');
+							delay = 200;
+						}
+						clearTimeout(subGnb._depthTimer);
+						subGnb._depthTimer = setTimeout(function () {
+							subGnb.innerHTML = html;
+							subGnb.offsetHeight;
+							subGnb.classList.remove('is-hidden');
+						}, delay);
+					}
+
 					// autoScrollList 클래스를 가진 ul을 모두 선택
 					var autoScrollUls = document.querySelectorAll('.autoScrollList');
 					autoScrollUls.forEach(function (ul) {
@@ -438,21 +492,32 @@
 								l.classList.toggle('on', l === li);
 							});
 
-							//클릭된 li를 가운데로 이동(스크롤)
-							var ulRect = ul.getBoundingClientRect();
-							var liRect = li.getBoundingClientRect();
+							if (ul.classList.contains('ps-breadcrumb')) {
+								render3Depth(li.getAttribute('data-tab'));
+								updateBreadcrumbIndicator();
+							}
 
-							// 현재 스크롤 값
-							var scrollLeft = ul.scrollLeft;
-							// li의 가운데 좌표가 ul 가운데에 오도록 계산
+							//클릭된 li를 가운데로 이동(스크롤)
 							var liCenter = li.offsetLeft + li.offsetWidth / 2;
 							var ulCenter = ul.clientWidth / 2;
 							ul.scrollTo({
 								left: liCenter - ulCenter,
 								behavior: 'smooth'
 							});
+							if (ul.classList.contains('ps-breadcrumb')) {
+								requestAnimationFrame(updateBreadcrumbIndicator);
+							}
 						});
 					});
+
+					var initialTab = breadcrumb ? breadcrumb.querySelector('li.on') : null;
+					render3Depth(initialTab ? initialTab.getAttribute('data-tab') : 'all');
+					updateBreadcrumbIndicator();
+
+					if (breadcrumb) {
+						breadcrumb.addEventListener('scroll', updateBreadcrumbIndicator);
+					}
+					window.addEventListener('resize', updateBreadcrumbIndicator);
 				});
 			</script>
 			<!--//depth[e]-->
@@ -648,7 +713,7 @@
 						<!--정렬[s]-->
 						<div class="ps-option-list">
 							<ul class="ps-list grid grid-cols-2 gap-20" id="sortList">
-							<li>
+								<li>
 									<div class="ps-chkbox">
 										<label>
 											<input type="radio" name="sort_type" class="blackChk" value="recommend">
