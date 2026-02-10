@@ -137,6 +137,7 @@ body.show-aside aside .category-menus>li>a {
     color: #1d1d1d;
     font-size: 0.9375rem;
     font-weight: 600;
+    position: relative;
 }
 
 body.show-aside aside .category-menus>li .sub-menus {
@@ -151,25 +152,54 @@ body.show-aside aside .category-menus>li .sub-menus {
 }
 
 body.show-aside aside .category-menus>li .sub-menus li {
-    height: 39px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 body.show-aside aside .category-menus>li .sub-menus li a {
     font-size: 0.875rem;
+    line-height: 39px;
     font-weight: 400;
     color: #1e1e1e;
 }
 
-body.show-aside aside .category-menus>li.toggle>a {
-    background: url(https://image.prospecs.com/mobile/ux/css/img/mo_aside_plus.svg) center right no-repeat;
-    background-size: 1.125rem 1.125rem;
+body.show-aside aside .category-menus>li .sub-menus .sub-menu-img {
+    padding-bottom: 12px;
 }
 
-body.show-aside aside .category-menus>li.toggle-open>a {
-    background: url(https://image.prospecs.com/mobile/ux/css/img/mo_aside_minus.svg) center right no-repeat;
-    background-size: 1.125rem 1.125rem;
+body.show-aside aside .category-menus>li.toggle>a i {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+body.show-aside aside .category-menus>li.toggle>a i:before,
+body.show-aside aside .category-menus>li.toggle>a i:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.3px;
+    background: #000;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+body.show-aside aside .category-menus>li.toggle>a i:after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+body.show-aside aside .category-menus>li.toggle-open>a i:before {
+    transform: translateY(-50%) rotate(360deg);
+}
+
+body.show-aside aside .category-menus>li.toggle-open>a i:after {
+    transform: translateY(-50%) rotate(180deg);
 }
 
 body.show-aside aside .category-menus>li.toggle-open .sub-menus {
@@ -435,8 +465,108 @@ header .gnb-area .left-menus button {
     outline: none;
 }
 
-header .gnb-area .left-menus .menu-btn {
-    background: url(../../images/ps-new/ico_header_menu_bk.svg) no-repeat center center/contain;
+header .gnb-area .left-menus .menu-btn .menu-effect {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    padding: 2px 0;
+}
+
+header .gnb-area .left-menus .menu-btn .menu-effect .menu-effect-line {
+    width: 100%;
+    height: 1.3px;
+    display: inline-block;
+    background-color: #000;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    left: 0;
+}
+
+header .gnb-area .left-menus .menu-btn .menu-effect .menu-effect-line.fst {
+    top: 2px;
+}
+
+header .gnb-area .left-menus .menu-btn .menu-effect .menu-effect-line.snd {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header .gnb-area .left-menus .menu-btn .menu-effect .menu-effect-line.trd {
+    bottom: 2px;
+}
+
+@keyframes menu-line-fst-to-x {
+    0% {
+        top: 2px;
+        transform: none;
+    }
+
+    50% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+}
+
+@keyframes menu-line-trd-to-x {
+    0% {
+        top: auto;
+        bottom: 2px;
+        transform: none;
+    }
+
+    50% {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+}
+
+@keyframes menu-line-fst-to-menu {
+    0% {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    50% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        top: 2px;
+        transform: none;
+    }
+}
+
+@keyframes menu-line-trd-to-menu {
+    0% {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    50% {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        top: auto;
+        bottom: 2px;
+        transform: none;
+    }
 }
 
 header .gnb-area .left-menus .search-btn {
@@ -508,6 +638,41 @@ header aside {
     display: none;
 }
 
+
+body.show-aside header .gnb-area .left-menus .menu-btn .menu-effect-line {
+    background-color: #000;
+}
+
+body.show-aside header .gnb-area .left-menus .menu-btn .menu-effect-line.fst {
+    animation: menu-line-fst-to-x 0.35s ease-in-out forwards;
+    transition: none;
+}
+
+body.show-aside header .gnb-area .left-menus .menu-btn .menu-effect-line.snd {
+    opacity: 0;
+}
+
+body.show-aside header .gnb-area .left-menus .menu-btn .menu-effect-line.trd {
+    animation: menu-line-trd-to-x 0.35s ease-in-out forwards;
+    transition: none;
+}
+
+body:not(.show-aside) header .gnb-area .left-menus .menu-btn .menu-effect-line.fst {
+    animation: menu-line-fst-to-menu 0.35s ease-in-out forwards;
+    transition: none;
+}
+
+body:not(.show-aside) header .gnb-area .left-menus .menu-btn .menu-effect-line.snd {
+    opacity: 1;
+}
+
+body:not(.show-aside) header .gnb-area .left-menus .menu-btn .menu-effect-line.trd {
+    animation: menu-line-trd-to-menu 0.35s ease-in-out forwards;
+    transition: none;
+}
+
+
+
 body:not(.show-aside) header.transparent {
     background-color: transparent;
 }
@@ -520,18 +685,8 @@ body:not(.show-aside) header.transparent .gnb-area .menus a {
     color: white;
 }
 
-body.show-aside header .gnb-area .left-menus .menu-btn {
-    text-indent: -999em;
-    outline: none;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url(../../images/ps-new/ico_header_menu_close.svg) no-repeat center center/contain;
-}
-
-body:not(.show-aside) header.transparent .gnb-area .left-menus .menu-btn {
-
-    background: url(../../images/ps-new/ico_header_menu_wh.svg) no-repeat center center/contain;
+body:not(.show-aside) header.transparent .gnb-area .left-menus .menu-btn .menu-effect-line {
+    background: #fff;
 }
 
 body:not(.show-aside) header.transparent .gnb-area .left-menus .search-btn {

@@ -159,7 +159,13 @@
                     </a>
                 </div>
                 <div class="left-menus">
-                    <button class="gnb-left-area-btn menu-btn" id="sideMenuClose">메뉴보기</button>
+                    <button class="gnb-left-area-btn menu-btn" id="sideMenuClose">
+                        <div class="menu-effect">
+                            <span class="menu-effect-line fst"></span>
+                            <span class="menu-effect-line snd"></span>
+                            <span class="menu-effect-line trd"></span>
+                        </div>
+                    </button>
                     <button class="search-btn" data-open-layer="commonSearch" id="search"
                         onclick="jfGnbSearch();">검색</button>
                 </div>
@@ -168,33 +174,32 @@
                         <button class="mypage-btn"><span>마이페이지</span></button>
                     </li>
                     <li class="has-cart">
-                        <button class="cart-btn" onclick="cfGoToPage(_PAGE_CART_LIST);"><span>0</span></button>
+                        <button id="cart-lottie" class="cart-btn"
+                            onclick="cfGoToPage(_PAGE_CART_LIST);"><span>0</span></button>
                     </li>
                 </ul>
                 <input type="hidden" id="cart-cnt" value="0">
             </div>
             <aside>
-
+                <!-- 
                 <div class="logout-area" style="display: none;">
-                    <!-- <p class="top-message" style="display: none;">
+                    <p class="top-message" style="display: none;">
                         <a class="login-page-btn underline" href="javascript:void('0');"
                             onclick="cfGoToPage(_PAGE_LOGIN); return false;">로그인</a>하시고,<br />다양한 혜택을 만나보세요!
-                    </p> -->
+                    </p>
                     <p class="top-message" style="display: none;">
                         안녕하세요 <span class="underline"
                             onclick="cfGoToPage(_PAGE_MYPAGE); return false;">프로스펙스</span>님<br>
                         <span class="freinds" onclick="cfGoToPage(_PAGE_MEMBERSHIP_GUIDE); return false;">FAMILY</span>
                         혜택을 받을 수 있어요!
                     </p>
-                    <!-- 로그인후 노출로 변경 20260209[s] -->
                     <div class="btn-wrap2" style="display: none;">
                         <button class="membership-btn popup-btn" data-popup="membership-logout">MEMBER CARD</button>
                         <button class="mypage-btn" onclick="cfGoToPage(_PAGE_MEMBER_SIGNUP); return false;">MY
                             PAGE</button>
                         <button class="logout-btn" onclick="jfLogout(); return false;">로그아웃</button>
                     </div>
-                    <!--// 로그인후 노출로 변경 20260209[e] -->
-                </div>
+                </div> -->
                 <div class="menus-area">
                     <ul class="top-menu-list">
                         <li>
@@ -225,9 +230,9 @@
                     </ul>
                     <ul class="category-menus">
 
-                        <li>
+                        <li class="toggle">
                             <a href="javascript:void('0');" onclick="">
-                                SHOP
+                                SHOP<i></i>
                             </a>
                             <ul class="sub-menus">
                                 <div>
@@ -252,13 +257,24 @@
                             </ul>
                         </li>
                         <li class="toggle">
-                            <a href="javascript:void('0');" onclick="cfGoToPage(_PAGE_SMART_FIT); return false;">
-                                ONE SPEC
-                            </a>
-                        </li>
-                        <li>
                             <a href="javascript:void('0');" onclick="">
-                                ABOUT
+                                ONE SPEC<i></i>
+                            </a>
+                            <ul class="sub-menus">
+                                <div>
+                                    <li><a href="javascript:;"
+                                            onclick="cfCategoryItmKinds(1100,2,'','',''); return false;"
+                                            rel="nosublink">내 발 사이즈 측정하기</a>
+                                        <div class="sub-menu-img">
+                                            <img src="../../images/ps-new/img_onespec_banner.png" alt="내 발 사이즈 측정하기">
+                                        </div>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="toggle">
+                            <a href="javascript:void('0');" onclick="">
+                                ABOUT<i></i>
                             </a>
                             <ul class="sub-menus">
                                 <div>
@@ -441,7 +457,7 @@
                 window.addEventListener('scroll', onScroll);
 
                 document.querySelector('header .menu-btn').addEventListener('click', function () {
-                    $('#sideMenuClose').text($('#sideMenuClose').text() == "MENU" ? "CLOSE" : "MENU");
+                    //2026 삭제 $('#sideMenuClose').text($('#sideMenuClose').text() == "MENU" ? "CLOSE" : "MENU");
                     document.querySelector('body').classList.toggle('show-aside');
                 })
 
