@@ -2584,6 +2584,7 @@ body {
 
 .ps-new .ps-tab--wrap.type1 {
   margin-top: 33px;
+  position: relative;
 }
 
 .ps-new .ps-breadcrumb+.ps-subtitle {
@@ -2651,6 +2652,7 @@ body {
   margin-bottom: 0;
   height: 60px;
   border-bottom: 1px solid var(--color-30);
+  gap: 24px;
 }
 
 .ps-new .ps-tab--wrap.type1 .ps-tab--item {
@@ -2660,6 +2662,7 @@ body {
   height: 100%;
   font-weight: 600 !important;
   padding: 0 10px;
+  margin: 0;
 }
 
 .ps-new .ps-tab--wrap.type1 .ps-tab--item:first-child {
@@ -2679,13 +2682,18 @@ body {
   color: var(--color-90);
 }
 
-.ps-new .ps-tab--wrap.type1 .ps-tab--item:hover::after,
-.ps-new .ps-tab--wrap.type1 .ps-tab--item.active::after {
-  opacity: 1;
+.ps-new .ps-tab--wrap.type1 .ps-tab--indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: var(--color-90);
+  transition: transform 0.25s ease, width 0.25s ease;
+  will-change: transform, width;
 }
 
-.ps-new .ps-tab--wrap.type1 .ps-tab--item+.ps-tab--item {
-  margin-left: 24px;
+.ps-new .ps-tab--wrap.type1 .ps-tab--indicator.no-anim {
+  transition: none;
 }
 
 /* 2depth & 필터 */

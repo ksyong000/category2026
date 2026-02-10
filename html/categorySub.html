@@ -639,28 +639,126 @@
       <div class="ps-inner" style="padding: 0 15px">
         <div class="ps-tab--wrap type1">
           <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1000,1,'','',''); return false;"
-            class="ps-tab--item">신발전체</a>
+            class="ps-tab--item active" data-tab="all">신발전체</a>
           <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1100,2,'','',''); return false;"
-            class="ps-tab--item active">러닝화</a>
+            class="ps-tab--item" data-tab="running">러닝화</a>
           <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1200,2,'','',''); return false;"
-            class="ps-tab--item">워킹화</a>
+            class="ps-tab--item" data-tab="walking">워킹화</a>
           <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
-            class="ps-tab--item">트레킹화</a>
+            class="ps-tab--item" data-tab="trekking">트레킹화</a>
           <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
-            class="ps-tab--item">라이프스타일</a>
+            class="ps-tab--item" data-tab="lifestyle">라이프스타일</a>
           <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
-            class="ps-tab--item">헤리티지</a>
+            class="ps-tab--item" data-tab="heritage">헤리티지</a>
           <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
-            class="ps-tab--item">스포츠화</a>
+            class="ps-tab--item" data-tab="sports">스포츠화</a>
+          <div class="ps-tab--indicator"></div>
         </div>
+        <!--인디케이터 추가 20260210[s]-->
+        <script>
+          $(function () {
+            var tab3DepthMap = {
+              all: [],
+              running: [
+                { name: "전체", link: "javascript:;" },
+                { name: "레이싱화", link: "javascript:;" },
+                { name: "안정화", link: "javascript:;" },
+                { name: "쿠션화", link: "javascript:;" },
+                { name: "트레일러닝화", link: "javascript:;" },
+              ],
+              walking: [],
+              trekking: [],
+              lifestyle: [{ name: "전체", link: "javascript:;" },
+              { name: "데일리", link: "javascript:;" },
+              { name: "컴포트", link: "javascript:;" },
+              { name: "피트니스", link: "javascript:;" },],
+              heritage: [
+                { name: "전체", link: "javascript:;" },
+                { name: "클래식", link: "javascript:;" },
+                { name: "레트로", link: "javascript:;" },
+              ],
+              sports: [
+                { name: "전체", link: "javascript:;" },
+                { name: "축구", link: "javascript:;" },
+                { name: "농구", link: "javascript:;" },
+                { name: "야구", link: "javascript:;" },
+              ],
+            };
+
+            function render3Depth(tabKey) {
+              var $depth = $(".ps-tab--2depth");
+              if (!$depth.length) return;
+              var list = tab3DepthMap[tabKey] || [];
+              if (!list.length) {
+                $depth.stop(true, true).slideUp(200);
+                return;
+              }
+
+              var html = "";
+              $.each(list, function (idx, item) {
+                html +=
+                  '<a href="' +
+                  item.link +
+                  '"' +
+                  (idx === 0 ? ' class="active"' : "") +
+                  ">" +
+                  item.name +
+                  "</a>";
+              });
+              $depth.html(html);
+              if ($depth.is(":hidden")) {
+                $depth.stop(true, true).slideDown(200);
+              }
+            }
+
+            $(document).on("click", ".ps-tab--2depth a", function () {
+              $(this).addClass("active").siblings().removeClass("active");
+            });
+
+            function updateTabIndicator($wrap, animate) {
+              var $active = $wrap.find(".ps-tab--item.active");
+              var $indicator = $wrap.find(".ps-tab--indicator");
+              if ($active.length === 0 || $indicator.length === 0) return;
+
+              var left = $active.position().left;
+              var width = $active.outerWidth();
+              if (!animate) {
+                $indicator.addClass("no-anim");
+              }
+              $indicator.css({
+                width: width,
+                transform: "translateX(" + left + "px)",
+              });
+              if (!animate) {
+                requestAnimationFrame(function () {
+                  $indicator.removeClass("no-anim");
+                });
+              }
+            }
+
+            $(".ps-tab--wrap").each(function () {
+              var $wrap = $(this);
+              updateTabIndicator($wrap, false);
+              render3Depth($wrap.find(".ps-tab--item.active").data("tab"));
+
+              $wrap.on("click", ".ps-tab--item", function () {
+                $wrap.find(".ps-tab--item").removeClass("active");
+                $(this).addClass("active");
+                updateTabIndicator($wrap, true);
+                render3Depth($(this).data("tab"));
+              });
+            });
+
+            $(window).on("resize", function () {
+              $(".ps-tab--wrap").each(function () {
+                updateTabIndicator($(this), false);
+              });
+            });
+          });
+        </script>
+        <!--//인디케이터 추가 20260210[e]-->
         <div class="ps-tab-bottom-wrap">
-          <div class="ps-tab--2depth">
-            <a href="javascript:;" class="active">전체</a>
-            <a href="javascript:;">레이싱화</a>
-            <a href="javascript:;">안정화</a>
-            <a href="javascript:;">쿠션화</a>
-            <a href="javascript:;">트레일러닝화</a>
-          </div>
+          <div class="ps-tab--2depth"></div>
           <!-- 상품 옵션 -->
           <div class="ps-prd-list--header flex justify-between" id="listHeader">
             <div class="ps-prd-list--util flex">
@@ -672,7 +770,7 @@
               <div id="customSelect" class="custom-select">
                 <div class="custom-select-selected">RECOM</div>
                 <div class="custom-select-options" style="display: none">
-                <div class="custom-select-option" data-value="RECOMMEND">
+                  <div class="custom-select-option" data-value="RECOMMEND">
                     RECOM
                   </div>
                   <div class="custom-select-option" data-value="MD_RCMD_REG">
