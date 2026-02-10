@@ -451,6 +451,7 @@ header .gnb-area .menus>li .sub-menus>li:hover {
 }
 
 header .gnb-area .left-menus {
+    min-width: 67px;
     height: 20px;
     display: flex;
     gap: 1.5rem;
@@ -577,6 +578,7 @@ header .gnb-area .right-menus {
     display: flex;
     gap: 1.5rem;
     margin-left: auto;
+    min-width: 64px;
     height: 20px;
 }
 
