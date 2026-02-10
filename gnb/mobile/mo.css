@@ -605,8 +605,11 @@ header .gnb-area .right-menus>li button.cart-btn span {
 }
 
 header .gnb-area .right-menus>li button.cart-btn span i {
+    font-family: 'Pretendard Variable';
+    font-weight: 600;
     font-style: normal;
     align-items: center;
+    text-align: center;
 }
 
 header .gnb-area .right-menus>li button.mypage-btn span {
