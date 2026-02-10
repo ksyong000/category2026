@@ -85,7 +85,7 @@ body.show-aside aside .btn-wrap2>button {
     padding-left: 1.0625rem;
     height: 2rem;
     font-size: 0.8125rem;
-    font-family: "GeneralSans-Regular";
+    font-family: "General-Sans";
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
@@ -116,7 +116,7 @@ body.show-aside aside .top-menu-list {
 }
 
 body.show-aside aside .top-menu-list>li>a {
-    /* font-family: "GeneralSans-Regular"; */
+    /* font-family: "General-Sans"; */
     padding: 0.3rem 0;
     display: block;
     color: #1d1d1d;
@@ -131,7 +131,7 @@ body.show-aside aside .category-menus {
 }
 
 body.show-aside aside .category-menus>li>a {
-    font-family: "GeneralSans-Regular";
+    font-family: "General-Sans";
     padding: 0.425rem 0;
     display: block;
     color: #1d1d1d;
@@ -148,7 +148,7 @@ body.show-aside aside .category-menus>li .sub-menus {
     flex-direction: column;
     padding-left: 1.5rem;
     gap: 8px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 body.show-aside aside .category-menus>li .sub-menus li {
@@ -187,7 +187,7 @@ body.show-aside aside .category-menus>li.toggle>a i:after {
     background: #000;
     top: 50%;
     transform: translateY(-50%);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 body.show-aside aside .category-menus>li.toggle>a i:after {
@@ -376,7 +376,7 @@ header .gnb-area {
     align-items: center;
     padding: 1rem 1.25rem;
     box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 header .gnb-area .logo {
@@ -478,7 +478,7 @@ header .gnb-area .left-menus .menu-btn .menu-effect .menu-effect-line {
     display: inline-block;
     background-color: #000;
     position: absolute;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     left: 0;
 }
 
@@ -648,7 +648,7 @@ body.show-aside header .gnb-area .left-menus .menu-btn .menu-effect-line {
 }
 
 body.show-aside header .gnb-area .left-menus .menu-btn .menu-effect-line.fst {
-    animation: menu-line-fst-to-x 0.35s ease-in-out forwards;
+    animation: menu-line-fst-to-x 0.2s ease-in-out forwards;
     transition: none;
 }
 
@@ -657,12 +657,12 @@ body.show-aside header .gnb-area .left-menus .menu-btn .menu-effect-line.snd {
 }
 
 body.show-aside header .gnb-area .left-menus .menu-btn .menu-effect-line.trd {
-    animation: menu-line-trd-to-x 0.35s ease-in-out forwards;
+    animation: menu-line-trd-to-x 0.2s ease-in-out forwards;
     transition: none;
 }
 
 body:not(.show-aside) header .gnb-area .left-menus .menu-btn .menu-effect-line.fst {
-    animation: menu-line-fst-to-menu 0.35s ease-in-out forwards;
+    animation: menu-line-fst-to-menu 0.2s ease-in-out forwards;
     transition: none;
 }
 
@@ -671,7 +671,7 @@ body:not(.show-aside) header .gnb-area .left-menus .menu-btn .menu-effect-line.s
 }
 
 body:not(.show-aside) header .gnb-area .left-menus .menu-btn .menu-effect-line.trd {
-    animation: menu-line-trd-to-menu 0.35s ease-in-out forwards;
+    animation: menu-line-trd-to-menu 0.2s ease-in-out forwards;
     transition: none;
 }
 
@@ -1308,11 +1308,11 @@ footer .copyright {
 }
 
 #cart-cnt-effect.is-anim {
-    animation: cartCountUp 0.3s ease;
+    animation: cartCountUp 0.2s ease;
 }
 
 #cart-cnt-effect.is-anim-down {
-    animation: cartCountDown 0.3s ease;
+    animation: cartCountDown 0.2s ease;
 }
 
 @keyframes cartCountUp {
