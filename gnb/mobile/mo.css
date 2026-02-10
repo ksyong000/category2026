@@ -604,6 +604,10 @@ header .gnb-area .right-menus>li button.cart-btn span {
     text-indent: 0;
 }
 
+header .gnb-area .right-menus>li button.cart-btn span i {
+    font-style: normal;
+}
+
 header .gnb-area .right-menus>li button.mypage-btn span {
     background: url(../../images/ps-new/ico_header_mypage_bk.svg) no-repeat center center/contain;
 }
@@ -1294,6 +1298,45 @@ footer .copyright {
     margin-top: 1.875rem;
     font-size: 0.625rem;
     color: #8e8e8e;
+}
+
+/* 장바구니 인터렉션 */
+#cart-cnt-effect {
+    display: inline-block;
+    position: relative;
+    will-change: transform, opacity;
+}
+
+#cart-cnt-effect.is-anim {
+    animation: cartCountUp 0.3s ease;
+}
+
+#cart-cnt-effect.is-anim-down {
+    animation: cartCountDown 0.3s ease;
+}
+
+@keyframes cartCountUp {
+    from {
+        transform: translateY(6px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cartCountDown {
+    from {
+        transform: translateY(-6px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /*# sourceMappingURL=mo.css.map */

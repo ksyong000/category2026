@@ -127,6 +127,93 @@
                 $.post("/common.do?cmd=setTopBBDisYnAjax", $.param(params), function (result) { }, "text");
             }
         </script>
+        <!-- 장바구니 인터렉션[s] -->
+        <script type="text/javascript">
+            (function () {
+                function initCartCountEffect() {
+                    var cartCntInput = document.getElementById('cart-cnt');
+                    var cartCntEffect = document.getElementById('cart-cnt-effect');
+                    if (!cartCntInput || !cartCntEffect) {
+                        return false;
+                    }
+
+                    var prevCount = parseInt(cartCntEffect.textContent || cartCntInput.value || "0", 10) || 0;
+
+                    function syncCartCount() {
+                        var nextCount = parseInt(cartCntInput.value || "0", 10) || 0;
+                        cartCntEffect.textContent = nextCount;
+                        if (nextCount === prevCount) {
+                            return;
+                        }
+                        if (nextCount > prevCount) {
+                            cartCntEffect.classList.remove('is-anim', 'is-anim-down');
+                            void cartCntEffect.offsetHeight;
+                            cartCntEffect.classList.add('is-anim');
+                        } else if (nextCount < prevCount) {
+                            cartCntEffect.classList.remove('is-anim', 'is-anim-down');
+                            void cartCntEffect.offsetHeight;
+                            cartCntEffect.classList.add('is-anim-down');
+                        } else {
+                            cartCntEffect.classList.remove('is-anim', 'is-anim-down');
+                        }
+                        prevCount = nextCount;
+                    }
+
+                    syncCartCount();
+
+                    if (Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')) {
+                        var valueDescriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+                        Object.defineProperty(cartCntInput, 'value', {
+                            get: function () {
+                                return valueDescriptor.get.call(this);
+                            },
+                            set: function (val) {
+                                valueDescriptor.set.call(this, val);
+                                syncCartCount();
+                            }
+                        });
+                    }
+
+                    var observer = new MutationObserver(function (mutations) {
+                        mutations.forEach(function (mutation) {
+                            if (mutation.type === 'attributes' && mutation.attributeName === 'value') {
+                                syncCartCount();
+                            }
+                        });
+                    });
+                    observer.observe(cartCntInput, { attributes: true });
+                    return true;
+                }
+
+                function tryInit() {
+                    if (!initCartCountEffect()) {
+                        setTimeout(tryInit, 50);
+                    }
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', tryInit);
+                } else {
+                    tryInit();
+                }
+            })();
+        </script>
+        <script type="text/javascript">
+            // EXAMPLE: setTimeout으로 cart-cnt 값 변경 (카운팅 효과 확인용)
+            setTimeout(function () {
+                var cartCntInput = document.getElementById('cart-cnt');
+                if (!cartCntInput) return;
+                cartCntInput.value = '1';
+                cartCntInput.setAttribute('value', '1');
+            }, 1000);
+            setTimeout(function () {
+                var cartCntInput = document.getElementById('cart-cnt');
+                if (!cartCntInput) return;
+                cartCntInput.value = '0';
+                cartCntInput.setAttribute('value', '0');
+            }, 3000);
+        </script>
+        <!--// 장바구니 인터렉션[e] -->
         <!-- GNB -->
         <header class="fixed">
 
@@ -174,8 +261,8 @@
                         <button class="mypage-btn"><span>마이페이지</span></button>
                     </li>
                     <li class="has-cart">
-                        <button id="cart-lottie" class="cart-btn"
-                            onclick="cfGoToPage(_PAGE_CART_LIST);"><span>0</span></button>
+                        <button class="cart-btn" onclick="cfGoToPage(_PAGE_CART_LIST);"><span><i
+                                    id="cart-cnt-effect">0</i></span></button>
                     </li>
                 </ul>
                 <input type="hidden" id="cart-cnt" value="0">
