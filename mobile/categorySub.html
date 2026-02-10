@@ -458,7 +458,7 @@
 						if (!subGnb) return;
 						var list = tab3DepthMap[tabKey] || [];
 						if (!list.length) {
-							subGnb.classList.add('is-hidden');
+							subGnb.classList.add('is-hidden', 'is-collapsing');
 							return;
 						}
 
@@ -468,7 +468,8 @@
 						});
 
 						var delay = 0;
-						if (!subGnb.classList.contains('is-hidden')) {
+						var isCollapsing = subGnb.classList.contains('is-collapsing');
+						if (!subGnb.classList.contains('is-hidden') && !isCollapsing) {
 							subGnb.classList.add('is-hidden');
 							delay = 200;
 						}
@@ -476,6 +477,7 @@
 						subGnb._depthTimer = setTimeout(function () {
 							subGnb.innerHTML = html;
 							subGnb.offsetHeight;
+							subGnb.classList.remove('is-collapsing');
 							subGnb.classList.remove('is-hidden');
 						}, delay);
 					}

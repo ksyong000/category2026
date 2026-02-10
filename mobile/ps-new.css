@@ -1797,15 +1797,19 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
     transform: translateY(0);
     opacity: 1;
     height: 100%;
-    transition: transform 0.1s ease, opacity 0.1s ease, height 0.1s ease;
-    will-change: transform, opacity, height;
+    transition: transform 0.2s ease, opacity 0.2s ease, height 0.2s ease;
+    will-change: transform, opacity;
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList.is-hidden {
     transform: translateY(-8px);
-    height: 0;
     opacity: 0;
     pointer-events: none;
+}
+
+.ps-new .ps-sub-gnbWrap .ps-sub-gnbList.is-collapsing {
+    height: 0;
+    overflow: hidden;
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList li {
