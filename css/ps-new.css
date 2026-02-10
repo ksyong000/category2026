@@ -13,6 +13,10 @@ body {
   font-feature-settings: "pnum" on, "lnum" on, "case" on, "ss01" on;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --color-0: #ffffff;
   --color-5: #f8f8f8;
@@ -2703,7 +2707,6 @@ body {
   position: relative;
   margin-top: 8px;
   margin-bottom: 14px;
-  overflow: hidden;
 }
 
 .ps-new .ps-tab-bottom-wrap .ps-tab--2depth {
@@ -4256,11 +4259,11 @@ body {
 }
 
 .ps-new .ps-goods-filter-area .filter-dimm {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    backdrop-filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  backdrop-filter: blur(3px);
 }
 
 .ps-new .ps-goods-filter-area .filter-content {
