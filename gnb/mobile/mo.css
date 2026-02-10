@@ -136,7 +136,7 @@ body.show-aside aside .category-menus>li>a {
     display: block;
     color: #1d1d1d;
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 700;
     position: relative;
 }
 
@@ -604,14 +604,11 @@ header .gnb-area .right-menus>li button.cart-btn span {
     font-size: 12px;
     font-weight: 500;
     text-indent: 0;
+    line-height: 160%;
 }
 
 header .gnb-area .right-menus>li button.cart-btn span i {
-    font-family: 'Pretendard Variable';
-    font-weight: 600;
     font-style: normal;
-    align-items: center;
-    text-align: center;
 }
 
 header .gnb-area .right-menus>li button.mypage-btn span {
