@@ -690,7 +690,7 @@
               if (!$depth.length) return;
               var list = tab3DepthMap[tabKey] || [];
               if (!list.length) {
-                $depth.stop(true, true).slideUp(200);
+                $depth.addClass("is-hidden");
                 return;
               }
 
@@ -705,10 +705,18 @@
                   item.name +
                   "</a>";
               });
-              $depth.html(html);
-              if ($depth.is(":hidden")) {
-                $depth.stop(true, true).slideDown(200);
+              var delay = 0;
+              if (!$depth.hasClass("is-hidden")) {
+                $depth.addClass("is-hidden");
+                delay = 200;
               }
+              clearTimeout($depth.data("depthTimer"));
+              var timer = setTimeout(function () {
+                $depth.html(html);
+                $depth[0].offsetHeight;
+                $depth.removeClass("is-hidden");
+              }, delay);
+              $depth.data("depthTimer", timer);
             }
 
             $(document).on("click", ".ps-tab--2depth a", function () {
