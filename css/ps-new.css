@@ -2719,7 +2719,7 @@ body {
 }
 
 .ps-new .ps-tab-bottom-wrap .ps-tab--2depth.is-hidden {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   opacity: 0;
   pointer-events: none;
 
