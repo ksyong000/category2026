@@ -1796,7 +1796,7 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList {
     transform: translateY(0);
     opacity: 1;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.1s ease, opacity 0.1s ease;
     will-change: transform, opacity;
 }
 
