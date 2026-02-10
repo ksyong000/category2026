@@ -1,5 +1,5 @@
 body {
-    font-family: "Pretendard Variable", Pretendard, General-Sans, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
     overflow-x: hidden;
     font-feature-settings: 'case' on, 'ss01' on;
 }
@@ -131,7 +131,6 @@ body.show-aside aside .category-menus {
 }
 
 body.show-aside aside .category-menus>li>a {
-    font-family: "General-Sans";
     padding: 0.425rem 0;
     display: block;
     color: #1d1d1d;
