@@ -2724,7 +2724,7 @@ body {
   pointer-events: none;
 
   /* 👇 사라질 때 더 빠르게 */
-  transition: transform 0.05s ease-in, opacity 0.05s ease-in;
+  transition: transform 0.03s ease-in, opacity 0.03s ease-in;
 }
 
 .ps-new .ps-tab-bottom-wrap .ps-tab--2depth a {
