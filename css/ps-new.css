@@ -1608,7 +1608,7 @@ body {
 }
 
 .ps-new .sponsorship--wrap .sp-area-box .swiper-container:not(.swiper-container-initialized) .swiper-slide+.swiper-slide {
-  margin-left: 40px;
+  margin-left: 16px;
 }
 
 .ps-new .sponsorship--wrap .sp-area-box .swiper-container .arrow {
@@ -2712,20 +2712,22 @@ body {
 .ps-new .ps-tab-bottom-wrap .ps-tab--2depth {
   display: flex;
   gap: 16px;
+  position: absolute;
+  align-items: center;
 }
 
+/* 2depth 표시/숨김: 동일 duration으로 2depth 있는 탭끼리 이동 시 자연스러운 전환 */
 .ps-new .ps-tab-bottom-wrap .ps-tab--2depth {
   transform: translateY(0);
   opacity: 1;
-  transition: transform 0.1s ease, opacity 0.1s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease;
   will-change: transform, opacity;
 }
 
 .ps-new .ps-tab-bottom-wrap .ps-tab--2depth.is-hidden {
-  transform: translateY(-6px);
+  transform: translateY(-10px);
   opacity: 0;
   pointer-events: none;
-
   /* 👇 사라질 때 더 빠르게 */
   transition: transform 0.03s ease-in, opacity 0.03s ease-in;
 }
@@ -2737,6 +2739,8 @@ body {
   height: 100%;
   line-height: 36px;
   padding: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 .ps-new .ps-tab-bottom-wrap .ps-tab--2depth a:hover {
@@ -2975,7 +2979,8 @@ body {
 
 /* 20240514 */
 .ps-new .ps--opt-wrap .ps-prd--box .ps-prd-list--wrap .ps-col .desc {
-  min-height: 98px;
+  min-height: 146px;
+  /* 컬러칩 높이 조정 20260219 */
 }
 
 /* 20240514 */
@@ -4331,18 +4336,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  position: relative;
 }
 
 .ps-new .ps-goods-filter-area .filter-content .filter-item-title strong {
   font-size: 16px;
   font-weight: 500;
   color: var(--color-90);
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
 }
 
 .ps-new .ps-goods-filter-area .filter-content .filter-item-title .filter-item-close {
-  position: relative;
+  position: absolute;
   width: 20px;
   height: 20px;
+  right: 0;
+  z-index: 1;
 }
 
 .ps-new .ps-goods-filter-area .filter-content .filter-item-title .filter-item-close span {
@@ -4396,6 +4409,11 @@ body {
   font-weight: 500;
   color: var(--color-50);
   margin-top: 20px;
+}
+
+/* 특징 필터: .ps--opt-wrap 내 리스트가 한 줄 차지해 더보기 버튼이 아래로 배치 */
+.ps-new .ps-goods-filter-area .filter-content .filter-item-content .ps--opt-wrap .filter-item-list {
+  width: 100%;
 }
 
 .ps-new .ps-goods-filter-area .filter-content .filter-item-content .filter-item-list {

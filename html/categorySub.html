@@ -657,71 +657,15 @@
         <!--인디케이터 추가 20260210[s]-->
         <script>
           $(function () {
-            var tab3DepthMap = {
-              all: [],
-              running: [
-                { name: "전체", link: "javascript:;" },
-                { name: "레이싱화", link: "javascript:;" },
-                { name: "안정화", link: "javascript:;" },
-                { name: "쿠션화", link: "javascript:;" },
-                { name: "트레일러닝화", link: "javascript:;" },
-              ],
-              walking: [],
-              trekking: [],
-              lifestyle: [{ name: "전체", link: "javascript:;" },
-              { name: "스니커즈", link: "javascript:;" },
-              { name: "슬립온", link: "javascript:;" },
-              { name: "슬라이드/샌들", link: "javascript:;" },
-              { name: "방한화", link: "javascript:;" },
-              { name: "레인부츠", link: "javascript:;" },
-              { name: "아동화", link: "javascript:;" },],
-              heritage: [
-                { name: "전체", link: "javascript:;" },
-                { name: "MARATHON 110", link: "javascript:;" },
-                { name: "GRAND SLAM", link: "javascript:;" },
-              ],
-              sports: [
-                { name: "전체", link: "javascript:;" },
-                { name: "축구화", link: "javascript:;" },
-                { name: "야구화", link: "javascript:;" },
-                { name: "인도어화", link: "javascript:;" },
-                { name: "레슬링화", link: "javascript:;" },
-                { name: "골프화", link: "javascript:;" },
-              ],
-            };
-
+            // tab3DepthMap 하드코딩 적용
             function render3Depth(tabKey) {
-              var $depth = $(".ps-tab--2depth");
-              if (!$depth.length) return;
-              var list = tab3DepthMap[tabKey] || [];
-              if (!list.length) {
-                $depth.addClass("is-hidden");
-                return;
+              var $allDepth = $(".ps-tab--2depth");
+              if (!$allDepth.length) return;
+              $allDepth.addClass("is-hidden");
+              var $target = $(".ps-tab--2depth[data-tab='" + tabKey + "']");
+              if ($target.length) {
+                $target.removeClass("is-hidden");
               }
-
-              var html = "";
-              $.each(list, function (idx, item) {
-                html +=
-                  '<a href="' +
-                  item.link +
-                  '"' +
-                  (idx === 0 ? ' class="active"' : "") +
-                  ">" +
-                  item.name +
-                  "</a>";
-              });
-              var delay = 0;
-              if (!$depth.hasClass("is-hidden")) {
-                $depth.addClass("is-hidden");
-                delay = 200;
-              }
-              clearTimeout($depth.data("depthTimer"));
-              var timer = setTimeout(function () {
-                $depth.html(html);
-                $depth[0].offsetHeight;
-                $depth.removeClass("is-hidden");
-              }, delay);
-              $depth.data("depthTimer", timer);
             }
 
             $(document).on("click", ".ps-tab--2depth a", function () {
@@ -749,6 +693,7 @@
               }
             }
 
+            // tab3DepthMap 하드코딩 적용: .ps-tab--wrap 1depth 탭 클릭 시 하드코딩된 2depth 블록 표시
             $(".ps-tab--wrap").each(function () {
               var $wrap = $(this);
               updateTabIndicator($wrap, false);
@@ -771,7 +716,37 @@
         </script>
         <!--//인디케이터 추가 20260210[e]-->
         <div class="ps-tab-bottom-wrap">
-          <div class="ps-tab--2depth"></div>
+          <!-- tab3DepthMap 하드코딩 적용[s] (1depth처럼 .ps-tab--wrap 대응 2depth 메뉴) -->
+          <div class="ps-tab--2depth is-hidden" data-tab="running">
+            <a href="javascript:;" class="active">전체</a>
+            <a href="javascript:;">레이싱화</a>
+            <a href="javascript:;">안정화</a>
+            <a href="javascript:;">쿠션화</a>
+            <a href="javascript:;">트레일러닝화</a>
+          </div>
+          <div class="ps-tab--2depth is-hidden" data-tab="lifestyle">
+            <a href="javascript:;" class="active">전체</a>
+            <a href="javascript:;">스니커즈</a>
+            <a href="javascript:;">슬립온</a>
+            <a href="javascript:;">슬라이드/샌들</a>
+            <a href="javascript:;">방한화</a>
+            <a href="javascript:;">레인부츠</a>
+            <a href="javascript:;">아동화</a>
+          </div>
+          <div class="ps-tab--2depth is-hidden" data-tab="heritage">
+            <a href="javascript:;" class="active">전체</a>
+            <a href="javascript:;">MARATHON 110</a>
+            <a href="javascript:;">GRAND SLAM</a>
+          </div>
+          <div class="ps-tab--2depth is-hidden" data-tab="sports">
+            <a href="javascript:;" class="active">전체</a>
+            <a href="javascript:;">축구화</a>
+            <a href="javascript:;">야구화</a>
+            <a href="javascript:;">인도어화</a>
+            <a href="javascript:;">레슬링화</a>
+            <a href="javascript:;">골프화</a>
+          </div>
+          <!-- tab3DepthMap 하드코딩 적용[e] -->
           <!-- 상품 옵션 -->
           <div class="ps-prd-list--header flex justify-between" id="listHeader">
             <div class="ps-prd-list--util flex">
@@ -1266,51 +1241,126 @@
                 </div>
               </div>
               <!--// 필터 항목 1 -->
-              <!-- 필터 항목 2 -->
+              <!-- 필터 항목 2 (특징: 컬러 필터와 동일하게 .filter-item-more Show/Hide 및 더보기 적용) -->
               <div class="filter-item">
                 <div class="filter-item-title">
                   <strong>특징</strong>
                   <button class="filter-item-close"><span></span></button>
                 </div>
                 <div class="filter-item-content">
-                  <ul class="filter-item-list">
-                    <li>
-                      <div class="ps-chkbox">
-                        <label for="chk_feature_light">
-                          <input type="checkbox" name="chk_feature" id="chk_feature_light" class="blackChk"
-                            value="light" onclick="" />
-                          <span class="text"> 경량 </span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="ps-chkbox">
-                        <label for="chk_feature_cushion">
-                          <input type="checkbox" name="chk_feature" id="chk_feature_cushion" class="blackChk"
-                            value="cushion" onclick="" />
-                          <span class="text"> 쿠셔닝/반발력 </span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="ps-chkbox">
-                        <label for="chk_feature_grip">
-                          <input type="checkbox" name="chk_feature" id="chk_feature_grip" class="blackChk" value="grip"
-                            onclick="" />
-                          <span class="text"> 접지력/안정성 </span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="ps-chkbox">
-                        <label for="chk_feature_breathe">
-                          <input type="checkbox" name="chk_feature" id="chk_feature_breathe" class="blackChk"
-                            value="breathe" onclick="" />
-                          <span class="text"> 통기성 </span>
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
+                  <div class="ps--opt-wrap">
+                    <ul class="filter-item-list">
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_light">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_light" class="blackChk"
+                              value="light" onclick="" />
+                            <span class="text"> 경량 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_cushion">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_cushion" class="blackChk"
+                              value="cushion" onclick="" />
+                            <span class="text"> 쿠셔닝/반발력 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_grip">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_grip" class="blackChk"
+                              value="grip" onclick="" />
+                            <span class="text"> 접지력/안정성 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_breathe">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_breathe" class="blackChk"
+                              value="breathe" onclick="" />
+                            <span class="text"> 통기성 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_light">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_light" class="blackChk"
+                              value="light" onclick="" />
+                            <span class="text"> 경량 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_cushion">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_cushion" class="blackChk"
+                              value="cushion" onclick="" />
+                            <span class="text"> 쿠셔닝/반발력 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_grip">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_grip" class="blackChk"
+                              value="grip" onclick="" />
+                            <span class="text"> 접지력/안정성 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_breathe">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_breathe" class="blackChk"
+                              value="breathe" onclick="" />
+                            <span class="text"> 통기성 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_light">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_light" class="blackChk"
+                              value="light" onclick="" />
+                            <span class="text"> 경량 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_cushion">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_cushion" class="blackChk"
+                              value="cushion" onclick="" />
+                            <span class="text"> 쿠셔닝/반발력 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_grip">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_grip" class="blackChk"
+                              value="grip" onclick="" />
+                            <span class="text"> 접지력/안정성 </span>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ps-chkbox">
+                          <label for="chk_feature_breathe">
+                            <input type="checkbox" name="chk_feature" id="chk_feature_breathe" class="blackChk"
+                              value="breathe" onclick="" />
+                            <span class="text"> 통기성 </span>
+                          </label>
+                        </div>
+                      </li>
+                    </ul>
+                    <button class="filter-item-more">더보기</button>
+                  </div>
                 </div>
               </div>
               <!--// 필터 항목 2 -->
@@ -1601,7 +1651,8 @@
         <script>
           //필터영역 슬라이드처리
           $(document).ready(function () {
-            $(".filter-item-close").on("click", function (e) {
+            // .filter-item-title 또는 .filter-item-close 클릭 시 접기/펼치기
+            $(document).on("click", ".filter-item-title, .filter-item-close", function (e) {
               e.preventDefault();
               var $parent = $(this).closest(".filter-item");
               $parent.toggleClass("active");
@@ -1747,30 +1798,29 @@
             // 최초 실행하여 상태 동기화
             updateFilterSelectedItems();
 
-            // 컬러 필터 .filter-item-more Show/Hide 처리 및 더보기 기능
-            function updateColorFilterMoreButton() {
-              var $colorWrap = $(".ps--opt-wrap");
-              $colorWrap.each(function () {
-                var $colorsUl = $(this).find('.opt-list.colors');
-                var $colorLis = $colorsUl.find('li');
-                var $moreBtn = $(this).parent().find('.filter-item-more');
-                if ($colorLis.length > 10) {
+            // 컬러 필터 / 특징 필터 .filter-item-more Show/Hide 처리 및 더보기 기능 (동일 적용)
+            function updateFilterMoreButton() {
+              $(".filter-item-content").each(function () {
+                var $wrap = $(this).find(".ps--opt-wrap");
+                var $moreBtn = $wrap.find(".filter-item-more");
+                if (!$moreBtn.length) return;
+                var $list = $wrap.children("ul").first();
+                var $lis = $list.find("li");
+                if ($lis.length > 10) {
                   $moreBtn.show();
-                  // 기본 - 10개까지만 보여주기 (닫힌 상태)
-                  if (!$moreBtn.data('opened')) {
-                    $colorLis.each(function (idx) {
+                  if (!$moreBtn.data("opened")) {
+                    $lis.each(function (idx) {
                       if (idx > 9) {
                         $(this).stop(true, true).slideUp(200);
                       } else {
                         $(this).stop(true, true).slideDown(200);
                       }
                     });
-                    $moreBtn.text('더보기');
+                    $moreBtn.text("더보기");
                   }
                 } else {
-                  // li 10개 이하면 모두 보이고 더보기버튼 숨김
                   $moreBtn.hide();
-                  $colorLis.each(function (idx) {
+                  $lis.each(function () {
                     $(this).stop(true, true).slideDown(200);
                   });
                 }
@@ -1778,37 +1828,34 @@
             }
 
             // 초기호출
-            updateColorFilterMoreButton();
+            updateFilterMoreButton();
 
-            // 더보기/닫기 클릭 시 동작
-            $(document).on('click', '.filter-item-more', function () {
+            // 더보기/닫기 클릭 시 동작 (컬러·특징 공통)
+            $(document).on("click", ".filter-item-more", function () {
               var $btn = $(this);
-              var $wrap = $btn.closest('.filter-item-content').find('.ps--opt-wrap');
-              var $colorsUl = $wrap.find('.opt-list.colors');
-              var $colorLis = $colorsUl.find('li');
-              if (!$btn.data('opened')) {
-                // 더보기 (펼침) → 모두 보이기
-                $colorLis.each(function (idx) {
+              var $wrap = $btn.closest(".filter-item-content").find(".ps--opt-wrap");
+              var $list = $wrap.children("ul").first();
+              var $lis = $list.find("li");
+              if (!$btn.data("opened")) {
+                $lis.each(function () {
                   $(this).stop(true, true).slideDown(200);
                 });
-                $btn.text('닫기');
-                $btn.data('opened', true);
+                $btn.text("닫기");
+                $btn.data("opened", true);
               } else {
-                // 닫기 → 10개만 보이기
-                $colorLis.each(function (idx) {
+                $lis.each(function (idx) {
                   if (idx > 9) {
                     $(this).stop(true, true).slideUp(200);
                   } else {
                     $(this).stop(true, true).slideDown(200);
                   }
                 });
-                $btn.text('더보기');
-                $btn.data('opened', false);
+                $btn.text("더보기");
+                $btn.data("opened", false);
               }
             });
 
-            // 만약 컬러 옵션 항목이 동적으로 바뀐다면(ajax 등), 아래 함수 재호출 필요
-            // 예시: updateColorFilterMoreButton();
+            // 옵션 항목이 동적으로 바뀌면 재호출: updateFilterMoreButton();
           });
         </script>
         <!--//2026필터영역 변경-->
