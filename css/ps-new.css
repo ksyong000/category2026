@@ -2652,6 +2652,18 @@ body {
   opacity: 1;
 }
 
+.ps-new .ps-tab--wrap-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.up:not(.top) .ps-tab--wrap-sticky {
+  transform: translateY(-100%);
+}
+
 .ps-new .ps-tab--wrap.type1 {
   margin-bottom: 0;
   height: 60px;

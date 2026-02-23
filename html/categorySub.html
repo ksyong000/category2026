@@ -637,196 +637,199 @@
     <main id="container">
       <!--// contents -->
       <div class="ps-inner" style="padding: 0 15px">
-        <div class="ps-tab--wrap type1">
-          <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1000,1,'','',''); return false;"
-            class="ps-tab--item active" data-tab="all">신발전체</a>
-          <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1100,2,'','',''); return false;"
-            class="ps-tab--item" data-tab="running">러닝화</a>
-          <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1200,2,'','',''); return false;"
-            class="ps-tab--item" data-tab="walking">워킹화</a>
-          <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
-            class="ps-tab--item" data-tab="trekking">트레킹화</a>
-          <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
-            class="ps-tab--item" data-tab="lifestyle">라이프스타일</a>
-          <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
-            class="ps-tab--item" data-tab="heritage">헤리티지</a>
-          <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
-            class="ps-tab--item" data-tab="sports">스포츠화</a>
-          <div class="ps-tab--indicator"></div>
-        </div>
-        <!--인디케이터 추가 20260210[s]-->
-        <script>
-          $(function () {
-            // tab3DepthMap 하드코딩 적용
-            function render3Depth(tabKey) {
-              var $allDepth = $(".ps-tab--2depth");
-              if (!$allDepth.length) return;
-              $allDepth.addClass("is-hidden");
-              var $target = $(".ps-tab--2depth[data-tab='" + tabKey + "']");
-              if ($target.length) {
-                $target.removeClass("is-hidden");
+        <!-- depth & sort 영역 구조 묶음 20260223[s] -->
+        <div class="ps-tab--wrap-sticky">
+          <div class="ps-tab--wrap type1">
+            <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1000,1,'','',''); return false;"
+              class="ps-tab--item active" data-tab="all">신발전체</a>
+            <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1100,2,'','',''); return false;"
+              class="ps-tab--item" data-tab="running">러닝화</a>
+            <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1200,2,'','',''); return false;"
+              class="ps-tab--item" data-tab="walking">워킹화</a>
+            <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
+              class="ps-tab--item" data-tab="trekking">트레킹화</a>
+            <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
+              class="ps-tab--item" data-tab="lifestyle">라이프스타일</a>
+            <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
+              class="ps-tab--item" data-tab="heritage">헤리티지</a>
+            <a href="javascript:void(0);" onclick="cfCategoryItmKinds(1300,2,'','',''); return false;"
+              class="ps-tab--item" data-tab="sports">스포츠화</a>
+            <div class="ps-tab--indicator"></div>
+          </div>
+          <!--인디케이터 추가 20260210[s]-->
+          <script>
+            $(function () {
+              // tab3DepthMap 하드코딩 적용
+              function render3Depth(tabKey) {
+                var $allDepth = $(".ps-tab--2depth");
+                if (!$allDepth.length) return;
+                $allDepth.addClass("is-hidden");
+                var $target = $(".ps-tab--2depth[data-tab='" + tabKey + "']");
+                if ($target.length) {
+                  $target.removeClass("is-hidden");
+                }
               }
-            }
 
-            $(document).on("click", ".ps-tab--2depth a", function () {
-              $(this).addClass("active").siblings().removeClass("active");
-            });
-
-            function updateTabIndicator($wrap, animate) {
-              var $active = $wrap.find(".ps-tab--item.active");
-              var $indicator = $wrap.find(".ps-tab--indicator");
-              if ($active.length === 0 || $indicator.length === 0) return;
-
-              var left = $active.position().left;
-              var width = $active.outerWidth();
-              if (!animate) {
-                $indicator.addClass("no-anim");
-              }
-              $indicator.css({
-                width: width,
-                transform: "translateX(" + left + "px)",
+              $(document).on("click", ".ps-tab--2depth a", function () {
+                $(this).addClass("active").siblings().removeClass("active");
               });
-              if (!animate) {
-                requestAnimationFrame(function () {
-                  $indicator.removeClass("no-anim");
+
+              function updateTabIndicator($wrap, animate) {
+                var $active = $wrap.find(".ps-tab--item.active");
+                var $indicator = $wrap.find(".ps-tab--indicator");
+                if ($active.length === 0 || $indicator.length === 0) return;
+
+                var left = $active.position().left;
+                var width = $active.outerWidth();
+                if (!animate) {
+                  $indicator.addClass("no-anim");
+                }
+                $indicator.css({
+                  width: width,
+                  transform: "translateX(" + left + "px)",
                 });
+                if (!animate) {
+                  requestAnimationFrame(function () {
+                    $indicator.removeClass("no-anim");
+                  });
+                }
               }
-            }
 
-            // tab3DepthMap 하드코딩 적용: .ps-tab--wrap 1depth 탭 클릭 시 하드코딩된 2depth 블록 표시
-            $(".ps-tab--wrap").each(function () {
-              var $wrap = $(this);
-              updateTabIndicator($wrap, false);
-              render3Depth($wrap.find(".ps-tab--item.active").data("tab"));
-
-              $wrap.on("click", ".ps-tab--item", function () {
-                $wrap.find(".ps-tab--item").removeClass("active");
-                $(this).addClass("active");
-                updateTabIndicator($wrap, true);
-                render3Depth($(this).data("tab"));
-              });
-            });
-
-            $(window).on("resize", function () {
+              // tab3DepthMap 하드코딩 적용: .ps-tab--wrap 1depth 탭 클릭 시 하드코딩된 2depth 블록 표시
               $(".ps-tab--wrap").each(function () {
-                updateTabIndicator($(this), false);
+                var $wrap = $(this);
+                updateTabIndicator($wrap, false);
+                render3Depth($wrap.find(".ps-tab--item.active").data("tab"));
+
+                $wrap.on("click", ".ps-tab--item", function () {
+                  $wrap.find(".ps-tab--item").removeClass("active");
+                  $(this).addClass("active");
+                  updateTabIndicator($wrap, true);
+                  render3Depth($(this).data("tab"));
+                });
+              });
+
+              $(window).on("resize", function () {
+                $(".ps-tab--wrap").each(function () {
+                  updateTabIndicator($(this), false);
+                });
               });
             });
-          });
-        </script>
-        <!--//인디케이터 추가 20260210[e]-->
-        <div class="ps-tab-bottom-wrap">
-          <!-- tab3DepthMap 하드코딩 적용[s] (1depth처럼 .ps-tab--wrap 대응 2depth 메뉴) -->
-          <div class="ps-tab--2depth is-hidden" data-tab="running">
-            <a href="javascript:;" class="active">전체</a>
-            <a href="javascript:;">레이싱화</a>
-            <a href="javascript:;">안정화</a>
-            <a href="javascript:;">쿠션화</a>
-            <a href="javascript:;">트레일러닝화</a>
-          </div>
-          <div class="ps-tab--2depth is-hidden" data-tab="lifestyle">
-            <a href="javascript:;" class="active">전체</a>
-            <a href="javascript:;">스니커즈</a>
-            <a href="javascript:;">슬립온</a>
-            <a href="javascript:;">슬라이드/샌들</a>
-            <a href="javascript:;">방한화</a>
-            <a href="javascript:;">레인부츠</a>
-            <a href="javascript:;">아동화</a>
-          </div>
-          <div class="ps-tab--2depth is-hidden" data-tab="heritage">
-            <a href="javascript:;" class="active">전체</a>
-            <a href="javascript:;">MARATHON 110</a>
-            <a href="javascript:;">GRAND SLAM</a>
-          </div>
-          <div class="ps-tab--2depth is-hidden" data-tab="sports">
-            <a href="javascript:;" class="active">전체</a>
-            <a href="javascript:;">축구화</a>
-            <a href="javascript:;">야구화</a>
-            <a href="javascript:;">인도어화</a>
-            <a href="javascript:;">레슬링화</a>
-            <a href="javascript:;">골프화</a>
-          </div>
-          <!-- tab3DepthMap 하드코딩 적용[e] -->
-          <!-- 상품 옵션 -->
-          <div class="ps-prd-list--header flex justify-between" id="listHeader">
-            <div class="ps-prd-list--util flex">
-              <div class="ps-list-filter-wrap">
-                <a href="javascript:filterPopup()" class="ps-list-filter open-layer"
-                  data-open-layer="layer-filter"><span>FILTER<span id="filter-count"></span></span><i></i></a>
-              </div>
-              <!-- INSERT_YOUR_CODE -->
-              <div id="customSelect" class="custom-select">
-                <div class="custom-select-selected">RECOM</div>
-                <div class="custom-select-options" style="display: none">
-                  <div class="custom-select-option" data-value="RECOMMEND">
-                    RECOM
-                  </div>
-                  <div class="custom-select-option" data-value="MD_RCMD_REG">
-                    NEW
-                  </div>
-                  <div class="custom-select-option" data-value="BEST">
-                    BEST
-                  </div>
-                  <div class="custom-select-option" data-value="PRICE_HIGH">
-                    PRICE ↑
-                  </div>
-                  <div class="custom-select-option" data-value="PRICE_LOW">
-                    PRICE ↓
+          </script>
+          <!--//인디케이터 추가 20260210[e]-->
+          <div class="ps-tab-bottom-wrap">
+            <!-- tab3DepthMap 하드코딩 적용[s] (1depth처럼 .ps-tab--wrap 대응 2depth 메뉴) -->
+            <div class="ps-tab--2depth is-hidden" data-tab="running">
+              <a href="javascript:;" class="active">전체</a>
+              <a href="javascript:;">레이싱화</a>
+              <a href="javascript:;">안정화</a>
+              <a href="javascript:;">쿠션화</a>
+              <a href="javascript:;">트레일러닝화</a>
+            </div>
+            <div class="ps-tab--2depth is-hidden" data-tab="lifestyle">
+              <a href="javascript:;" class="active">전체</a>
+              <a href="javascript:;">스니커즈</a>
+              <a href="javascript:;">슬립온</a>
+              <a href="javascript:;">슬라이드/샌들</a>
+              <a href="javascript:;">방한화</a>
+              <a href="javascript:;">레인부츠</a>
+              <a href="javascript:;">아동화</a>
+            </div>
+            <div class="ps-tab--2depth is-hidden" data-tab="heritage">
+              <a href="javascript:;" class="active">전체</a>
+              <a href="javascript:;">MARATHON 110</a>
+              <a href="javascript:;">GRAND SLAM</a>
+            </div>
+            <div class="ps-tab--2depth is-hidden" data-tab="sports">
+              <a href="javascript:;" class="active">전체</a>
+              <a href="javascript:;">축구화</a>
+              <a href="javascript:;">야구화</a>
+              <a href="javascript:;">인도어화</a>
+              <a href="javascript:;">레슬링화</a>
+              <a href="javascript:;">골프화</a>
+            </div>
+            <!-- tab3DepthMap 하드코딩 적용[e] -->
+            <!-- 상품 옵션 -->
+            <div class="ps-prd-list--header flex justify-between" id="listHeader">
+              <div class="ps-prd-list--util flex">
+                <div class="ps-list-filter-wrap">
+                  <a href="javascript:filterPopup()" class="ps-list-filter open-layer"
+                    data-open-layer="layer-filter"><span>FILTER<span id="filter-count"></span></span><i></i></a>
+                </div>
+                <!-- INSERT_YOUR_CODE -->
+                <div id="customSelect" class="custom-select">
+                  <div class="custom-select-selected">RECOM</div>
+                  <div class="custom-select-options" style="display: none">
+                    <div class="custom-select-option" data-value="RECOMMEND">
+                      RECOM
+                    </div>
+                    <div class="custom-select-option" data-value="MD_RCMD_REG">
+                      NEW
+                    </div>
+                    <div class="custom-select-option" data-value="BEST">
+                      BEST
+                    </div>
+                    <div class="custom-select-option" data-value="PRICE_HIGH">
+                      PRICE ↑
+                    </div>
+                    <div class="custom-select-option" data-value="PRICE_LOW">
+                      PRICE ↓
+                    </div>
                   </div>
                 </div>
-              </div>
-              <script>
-                $(document).ready(function () {
-                  // 옵션 펼치기/닫기
-                  $("#customSelect .custom-select-selected").click(function (
-                    e
-                  ) {
-                    e.stopPropagation();
-                    $(".custom-select-options").not($(this).next()).hide();
-                    $(this).next(".custom-select-options").slideToggle(200);
-                  });
+                <script>
+                  $(document).ready(function () {
+                    // 옵션 펼치기/닫기
+                    $("#customSelect .custom-select-selected").click(function (
+                      e
+                    ) {
+                      e.stopPropagation();
+                      $(".custom-select-options").not($(this).next()).hide();
+                      $(this).next(".custom-select-options").slideToggle(200);
+                    });
 
-                  // 옵션 선택
-                  $(".custom-select-option").click(function () {
-                    var selectedText = $(this).text();
-                    var selectedValue = $(this).data("value");
-                    $("#customSelect .custom-select-selected").text(
-                      selectedText
-                    );
-                    $("#customSelect .custom-select-options").hide();
-                    $(".custom-select-option").removeClass("selected");
-                    $(this).addClass("selected");
-                    $("#orderBySlct").val(selectedValue).trigger("change");
-                  });
-
-                  // 외부 클릭시 닫기
-                  $(document).click(function () {
-                    $(".custom-select-options").hide();
-                  });
-
-                  // 선택된 select값 표시
-                  $("#orderBySlct").change(function () {
-                    var val = $(this).val();
-                    var $opt = $(
-                      '#customSelect .custom-select-option[data-value="' +
-                      val +
-                      '"]'
-                    );
-                    if ($opt.length) {
+                    // 옵션 선택
+                    $(".custom-select-option").click(function () {
+                      var selectedText = $(this).text();
+                      var selectedValue = $(this).data("value");
                       $("#customSelect .custom-select-selected").text(
-                        $opt.text()
+                        selectedText
                       );
+                      $("#customSelect .custom-select-options").hide();
                       $(".custom-select-option").removeClass("selected");
-                      $opt.addClass("selected");
-                    }
-                  });
-                });
-              </script>
-            </div>
-          </div>
-          <!--// 상품 옵션 -->
-        </div>
+                      $(this).addClass("selected");
+                      $("#orderBySlct").val(selectedValue).trigger("change");
+                    });
 
+                    // 외부 클릭시 닫기
+                    $(document).click(function () {
+                      $(".custom-select-options").hide();
+                    });
+
+                    // 선택된 select값 표시
+                    $("#orderBySlct").change(function () {
+                      var val = $(this).val();
+                      var $opt = $(
+                        '#customSelect .custom-select-option[data-value="' +
+                        val +
+                        '"]'
+                      );
+                      if ($opt.length) {
+                        $("#customSelect .custom-select-selected").text(
+                          $opt.text()
+                        );
+                        $(".custom-select-option").removeClass("selected");
+                        $opt.addClass("selected");
+                      }
+                    });
+                  });
+                </script>
+              </div>
+            </div>
+            <!--// 상품 옵션 -->
+          </div>
+        </div>
+        <!--// depth & sort 영역 구조 묶음 20260223[e] -->
         <!-- product list -->
 
         <!--2024new-->

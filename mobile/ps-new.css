@@ -1772,7 +1772,8 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 }
 
 .up .ps-new .ps-sub-gnbWrap {
-    top: 60px;
+    top: 52px;
+    /* depth 네비 사이벌어짐 수정 20260223 */
 }
 
 .ps-new .ps-sub-gnbWrap .ps-sub-gnbList {
@@ -1881,6 +1882,39 @@ body:not(.topSlideY) .ps-new .sponsorship--wrap:before {
 .ps-new .sortPopup .ps-bottom-layer-content .inner {
     flex: 1;
     overflow-y: auto;
+}
+
+/* 20260223 팝업 타이틀& 닫기버튼 추가 */
+.ps-new .sortPopup .ps-bottom-layer-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 16px 20px;
+
+}
+
+.ps-new .sortPopup .ps-bottom-layer-title h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-90);
+}
+
+.ps-new .sortPopup .ps-bottom-layer-title .close-btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ps-new .sortPopup .ps-bottom-layer-title .close-btn span {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    font-size: 0;
+    text-indent: -999em;
+    background: url(../images/ps-new/ico_filter_closebtn.svg) center no-repeat;
+    background-size: 24px auto;
 }
 
 .ps-new .sortPopup .scroll-area-wrap {

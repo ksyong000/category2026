@@ -712,6 +712,11 @@
 			<!--SORT POPUP[s]-->
 			<div class="ps-bottom-layer sortPopup" data-layer-target="b-layer1">
 				<div class="ps-bottom-layer-content">
+					<!-- 팝업 타이틀& 닫기버튼 추가-->
+					<div class="ps-bottom-layer-title">
+						<h2>정렬</h2>
+						<button type="button" class="close-btn" data-close-layer="b-layer1"><span>닫기</span></button>
+					</div>
 					<div class="scroll-area-wrap">
 						<ul class="ps-bottom-layer--options autoScrollList">
 							<li class="on"><button type="button" class="">정렬</button></li>
@@ -730,7 +735,8 @@
 								<li>
 									<div class="ps-chkbox">
 										<label>
-											<input type="radio" name="sort_type" class="blackChk" value="recommend">
+											<input type="radio" name="sort_type" class="blackChk" value="MD_RCMD_REG"
+												checked>
 											<span class="text">RECOMMEND</span>
 										</label>
 									</div>
@@ -1332,14 +1338,6 @@
 									<div class="ps-chkbox">
 										<label>
 											<input type="checkbox" onclick="fn_checkPrice('1');">
-											<span class="text">3만원 이하</span>
-										</label>
-									</div>
-								</li>
-								<li>
-									<div class="ps-chkbox">
-										<label>
-											<input type="checkbox" onclick="fn_checkPrice('2');">
 											<span class="text">5만원 이하</span>
 										</label>
 									</div>
@@ -1347,8 +1345,16 @@
 								<li>
 									<div class="ps-chkbox">
 										<label>
+											<input type="checkbox" onclick="fn_checkPrice('2');">
+											<span class="text">5만원 ~ 10만원</span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="ps-chkbox">
+										<label>
 											<input type="checkbox" onclick="fn_checkPrice('3');">
-											<span class="text">7만원 이하</span>
+											<span class="text">10만원 ~ 15만원</span>
 										</label>
 									</div>
 								</li>
@@ -1356,7 +1362,7 @@
 									<div class="ps-chkbox">
 										<label>
 											<input type="checkbox" onclick="fn_checkPrice('4');">
-											<span class="text">10만원 이하</span>
+											<span class="text">15만원 ~ 20만원</span>
 										</label>
 									</div>
 								</li>
@@ -1365,14 +1371,6 @@
 										<label>
 											<input type="checkbox" onclick="fn_checkPrice('5');">
 											<span class="text">20만원 이상</span>
-										</label>
-									</div>
-								</li>
-								<li>
-									<div class="ps-chkbox">
-										<label>
-											<input type="checkbox" onclick="fn_checkPrice('6');">
-											<span class="text">30만원 이상</span>
 										</label>
 									</div>
 								</li>
@@ -1410,6 +1408,12 @@
 					$('.ps-bottom-layer--options').on('click', 'li', function () {
 						$(this).addClass('on').siblings().removeClass('on');
 						syncOptionListByIndex();
+					});
+
+					// 필터초기화 20260223 정렬 기본값 설정
+					$('.filter-btn-reset').on('click', function () {
+						$('.ps-option-list input').prop('checked', false);
+						$('.ps-option-list input[value="MD_RCMD_REG"]').prop('checked', true);
 					});
 				});
 			</script>
