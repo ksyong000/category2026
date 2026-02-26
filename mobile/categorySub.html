@@ -543,6 +543,9 @@
 							var li = e.target.closest('li');
 							if (!li || !ul.contains(li)) return;
 
+							// depth 클릭 시 body 스크롤을 top으로
+							window.scrollTo({ top: 0, behavior: 'smooth' });
+
 							//클릭된 li에 on클래스, 나머지는 제거
 							ul.querySelectorAll('li').forEach(function (l) {
 								l.classList.toggle('on', l === li);
