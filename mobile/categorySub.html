@@ -34,29 +34,56 @@
 
 <body class="topSlideY">
 	<div id="psWrap" class="ps-wrap ps-new sub">
+		<script type="text/javascript">
+			$(function () { var swiper = new Swiper('.top-txt-banner', { direction: 'vertical', loop: true, autoplay: { delay: 3000, }, }); });
+			function jfTopBBClose() {
+				var params = new Object();
+				params.WM_GB = 'W';
+				$.post("/common.do?cmd=setTopBBDisYnAjax"
+					, $.param(params)
+					, function (result) { }, "text");
+				document.querySelector('.top-txt-banner').classList.toggle('hide');
+				document.querySelector('body').classList.remove('topSlideY');/* 배너숨김 시 여백 변경 20260226 */
+			}
+		</script>
+
+		<style>
+			header {
+				transition: all .2s ease-in-out;
+			}
+		</style>
 		<!-- header -->
 		<header class="fixed">
-			<div class="swiper top-txt-banner swiper-initialized swiper-vertical swiper-backface-hidden">
-				<div class="swiper-wrapper" id="swiper-wrapper-d9fe141024d8bf4f2" aria-live="off"
-					style="transition-duration: 0ms; transform: translate3d(0px, -32px, 0px); transition-delay: 0ms;">
-					<div class="swiper-slide swiper-slide-next swiper-slide-prev"
-						style="display: flex; align-items: center; justify-content: center; background: rgb(0, 0, 0); color: rgb(255, 255, 255); height: 32px;"
-						role="group" aria-label="2 / 2" data-swiper-slide-index="1">
+			<div class="swiper top-txt-banner topAreaSwiper"> <!-- 기존 코드 적용을 위해 클래스 추가 topAreaSwiper 20260226 -->
+				<div class="swiper-wrapper">
+
+					<div class="swiper-slide"
+						style="background:#000000;color:#fff; align-items:center;justify-content:center;display:flex;">
 						<p>
-							<a href="http://pf.kakao.com/_Nxnhxbd">카카오톡 채널 친구 추가 시 5,000원 쿠폰 증정</a>
+							<a
+								href="https://www.prospecs.com/callcenter.do?cmd=getNoticeDetail&NOTICE_SQ=460&CURRENT_PAGE=1">[EVENT]
+								서하마 참가권 추첨 이벤트 당첨자 문자 발송 안내</a>
 						</p>
 						<button class="close-btn" onclick="jfTopBBClose();"></button>
 					</div>
-					<div class="swiper-slide swiper-slide-active"
-						style="display: flex; align-items: center; justify-content: center; background: rgb(0, 0, 0); color: rgb(255, 255, 255); height: 32px;"
-						role="group" aria-label="1 / 2" data-swiper-slide-index="0">
+
+					<div class="swiper-slide"
+						style="background:#000000;color:#fff; align-items:center;justify-content:center;display:flex;">
 						<p>
 							<a href="/display.do?cmd=appDown">APP 다운로드 시 3,000포인트 증정</a>
 						</p>
 						<button class="close-btn" onclick="jfTopBBClose();"></button>
 					</div>
+
+					<div class="swiper-slide"
+						style="background:#000000;color:#fff; align-items:center;justify-content:center;display:flex;">
+						<p>
+							<a href="http://pf.kakao.com/_Nxnhxbd">카카오톡 채널 친구 추가 시 5,000원 쿠폰 증정</a>
+						</p>
+						<button class="close-btn" onclick="jfTopBBClose();"></button>
+					</div>
+
 				</div>
-				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
 			</div>
 
 			<div class="gnb-area">
@@ -303,7 +330,7 @@
 				if (headerTopTxtBanner) {
 					headerTopTxtBanner.querySelector('.close-btn').addEventListener('click', function () {
 						document.querySelector('.top-txt-banner').classList.toggle('hide');
-					})
+					});
 				}
 
 				// 스크롤시 헤더 숨기기

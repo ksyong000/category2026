@@ -103,7 +103,8 @@ body.topSlideY .ps-new main {
 }
 
 body:not(.topSlideY) .ps-new main {
-    margin-top: 92px !important
+    margin-top: 61px !important
+        /* 배너숨김 시 여백 변경 20260226 */
 }
 
 /* �묐같�� �④린�� �щ갚癒쇱� �앷린�뷀쁽�� �섏젙 */
