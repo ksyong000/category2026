@@ -359,7 +359,7 @@
 								headerOffset = 0;
 							}
 
-							header.style.top = Math.max(0, -headerOffset) + "px"; /* header 위치 최소 0px 이상으로 제한 */
+							header.style.top = '-' + headerOffset + 'px';
 
 							lastScrollY = currentScrollY;
 							ticking = false;
