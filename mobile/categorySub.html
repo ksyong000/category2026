@@ -322,7 +322,7 @@
 			<!--// GNB -->
 		</header>
 		<script type="text/javascript">
-			//gnb레이아웃
+			//gnb레이아웃[s]
 			function initLayout() {
 				let header = document.querySelector('header');
 				let headerTopTxtBanner = header.querySelector('.top-txt-banner');
@@ -333,13 +333,25 @@
 					});
 				}
 
-				// 스크롤시 헤더 숨기기
+				// 스크롤시 헤더 숨기기 (사용자 스크롤일 때만 동작)
 				// 헤더가 스크롤한 만큼 따라 이동하도록 구현
 				let lastScrollY = window.scrollY;
 				let headerOffset = 0;
 				let ticking = false;
+				let userScrollActive = false;
+				let userScrollTimeout = null;
+
+				function setUserScrollActive() {
+					userScrollActive = true;
+					if (userScrollTimeout) clearTimeout(userScrollTimeout);
+					userScrollTimeout = setTimeout(function () {
+						userScrollActive = false;
+						userScrollTimeout = null;
+					}, 150);
+				}
 
 				function onScroll() {
+					if (!userScrollActive) return;
 					if (!ticking) {
 						window.requestAnimationFrame(() => {
 							const currentScrollY = window.scrollY;
@@ -368,7 +380,9 @@
 					}
 				}
 
-				window.addEventListener('scroll', onScroll);
+				window.addEventListener('scroll', onScroll, { passive: true });
+				window.addEventListener('wheel', setUserScrollActive, { passive: true });
+				window.addEventListener('touchmove', setUserScrollActive, { passive: true });
 
 				document.querySelector('header .menu-btn').addEventListener('click', function () {
 					$('#sideMenuClose').text($('#sideMenuClose').text() == "MENU" ? "CLOSE" : "MENU");
@@ -391,6 +405,7 @@
 			$(function () {
 				initLayout();
 			});
+			//gnb레이아웃[e]
 		</script>
 		<!--//header -->
 		<!--contents[s]-->
