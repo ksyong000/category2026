@@ -560,9 +560,13 @@
                             if (el.classList.contains('toggle-open')) {
                                 const aside = document.querySelector('.show-aside aside');
                                 if (aside) {
+                                    const topMenuList = aside.querySelector('.top-menu-list');
+                                    const menuListHeight = topMenuList
+                                        ? (topMenuList.offsetHeight + 50)
+                                        : 0;
                                     const isLastLi = !el.nextElementSibling;
                                     aside.scrollTo({
-                                        top: isLastLi ? aside.scrollHeight : 230,
+                                        top: isLastLi ? aside.scrollHeight : menuListHeight,
                                         behavior: 'smooth'
                                     });
                                 }
