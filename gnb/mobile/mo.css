@@ -587,6 +587,10 @@ header .gnb-area .right-menus>li {
     min-width: auto;
 }
 
+header .gnb-area .right-menus>li.has-cart {
+    top: -1px;
+}
+
 header .gnb-area .right-menus>li button span {
     display: inline-flex;
     align-items: center;
