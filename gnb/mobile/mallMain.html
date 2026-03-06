@@ -547,6 +547,12 @@
                 document.querySelector('header .menu-btn').addEventListener('click', function () {
                     //2026 삭제 $('#sideMenuClose').text($('#sideMenuClose').text() == "MENU" ? "CLOSE" : "MENU");
                     document.querySelector('body').classList.toggle('show-aside');
+                    // GNB열면 화면잠금 20260306
+                    if (document.body.classList.contains('show-aside')) {
+                        document.querySelector('html').style.overflow = 'hidden';
+                    } else {
+                        document.querySelector('html').style.overflow = '';
+                    }
                 })
 
                 const liList = document.querySelectorAll('aside .category-menus li');
